@@ -1,3 +1,3 @@
 @echo off
-start /min cmd /k "cd C:\xampp\htdocs\skb\myTest\jzgame && supervisor app"
-start /min cmd /k "cd C:\xampp\htdocs\skb\myTest\jzgame\nodejs && supervisor app"
+start /min cmd /k "cd D:\xampp\htdocs\myProject\jz && supervisor app"
+start /min cmd /k "cd D:\xampp\htdocs\myProject\jz\nodejs && supervisor app"
