@@ -4,6 +4,7 @@
     window.onload = function () {
         heightLight()
         zhichong()
+        show_login()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {
@@ -39,9 +40,22 @@
         })
     }
     function login(){
-        
+
     }
     function show_login(){
-        
+        //获取展示和关闭按钮的元素
+        var toLogin = document.getElementById("toLogin")
+        var closeLogin = document.getElementById("closeLogin")
+        var loginForm = document.getElementById("loginForm")
+        toLogin.onclick = function(e){
+            e.preventDefault
+            loginForm.style.width = "350px"
+            loginForm.style.height = "300px"
+        }
+        closeLogin.onclick = function(e){
+            e.preventDefault
+            loginForm.style.width = "0";
+            loginForm.style.height = "0"
+        }
     }
 })();

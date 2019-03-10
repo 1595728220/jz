@@ -13,16 +13,17 @@
 .nav .loginForm{
     position:fixed;
     right:38%;
-    top:27%;
-    width:350px;
-    height:300px;
+    top:16%;
+    width:0px;
+    height:0px;
+    overflow: hidden;
     background:rgba(238, 238, 238,0.8);
     z-index:20;
+    transition-duration:.1s;
 }
 .nav .loginForm img{
     width:38px;
     margin:16px;
-    transition:all .5s linear 0s;
 }
 .nav .loginForm img:hover{
     animation: roll .2s linear 0s 1;
@@ -82,11 +83,7 @@
     background:url("../asets/header-el.png") no-repeat 2px -4px;
     width:200px;
 }
-.nav>span:last-child{
-    font-size:14px;
-    margin-right:146px;
-    cursor:pointer;
-}
+
 .chongzhi{
     background-image: url("../asets//header-el.png");
     background-repeat:no-repeat;
