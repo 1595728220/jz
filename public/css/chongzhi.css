@@ -17,7 +17,7 @@
     width:0px;
     height:0px;
     overflow: hidden;
-    background:rgba(238, 238, 238,0.8);
+    background:rgba(238, 238, 238,0.9);
     z-index:20;
     transition-duration:.1s;
 }
@@ -83,7 +83,9 @@
     background:url("../asets/header-el.png") no-repeat 2px -4px;
     width:200px;
 }
-
+#toLogin:hover{
+    text-decoration: underline;
+}
 .chongzhi{
     background-image: url("../asets//header-el.png");
     background-repeat:no-repeat;
@@ -135,6 +137,7 @@ h2{
     background-color:transparent;
     background-image:url("../asets/portal-hover.jpg");
     top:257px;    
+    transition-duration:.3s;
     /* transition:top .5s linear 0s; */
 }
 .game .zhichong-area{

@@ -90,6 +90,7 @@
     text-align:center;
     border-radius:10px;
     border-right:2px solid #888888;
+    overflow:hidden;
 }
 .bg>.login>.right>a>img{
     margin-top:70px;

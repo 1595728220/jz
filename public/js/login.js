@@ -5,6 +5,7 @@
         login()
         register()
         submit()
+        otherJump()
     }
     //使用canvas实现文字滚动
     function draw(square, wall, deltaTime) {
@@ -210,6 +211,18 @@
                     }
                 }
             })
+        }
+    }
+    //其他登录界面跳转需注册时
+    function otherJump(){
+        var loc = location.href;
+        var n = loc.indexOf("=")
+        console.log(loc,n)
+        if(n !== -1){
+            var register = document.getElementById("register")
+            var loginArea = document.getElementById("loginArea")
+            register.style.width = ""
+            loginArea.style.width = "0px";
         }
     }
 })();
