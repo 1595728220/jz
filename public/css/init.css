@@ -1,0 +1,84 @@
+/* 基础样式 */
+body,ul,p,h1,h2,input{
+    margin:0;
+}
+body,a{
+    color:#555;
+}
+body{
+    font:12px/1.6 \5FAE\8F6F\96C5\9ED1, Tahoma, Geneva, sans-serif; 
+    background:#eee;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+.tc{
+    text-align: center;
+}
+.cp{
+    cursor:pointer;
+}
+ul{
+    list-style: none;
+    padding:0;
+}
+.bc{
+    margin-left:auto;
+    margin-right:auto;
+}
+a{
+    text-decoration: none;
+    /* display:block; */
+}
+img{
+    border:0;
+    vertical-align: top;
+}
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+input:-webkit-autofill{
+    box-shadow:0 0 0px 1000px #fff inset;
+}
+#header{
+    width:1200px;
+    display: block;
+    margin:auto;
+}
+.triangle-top{
+    width:0;
+    height:0;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-top: 8px solid #8FDAAC;
+}
+.triangle-right{
+    width:0;
+    height:0;
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+    border-right: 8px solid #8FDAAC;
+}
+.clear:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.clear:before{
+    content:"";
+    display:table;
+}
+.contain{
+    width:1200px;
+    margin:auto;
+}
+.tr{
+    transition:all .5s linear 0s;
+}

@@ -1,0 +1,151 @@
+/* 设置背景大图 */
+.bg{
+    background: #eee url(../asets/bg1.jpg) no-repeat  250px 0px;
+    height:571px;
+    width:1500px;
+    padding:63px 370px;
+    box-sizing: border-box;
+}
+/* 左侧样式 */
+.bg>.login>.left{
+    background: #eee;
+    height:430px;
+    width:448px;
+    box-sizing: border-box;
+    border-radius:10px;
+    overflow: hidden;
+    /* transition:width .5s linear 0s; */
+}
+.bg>.login>.left>p{
+    background:rgba(150, 150, 150,.6);
+    width:300px;
+}
+
+.bg>.login>.left>.text{
+    color:#000;
+    font-size: 20px;
+    text-align:center;
+    margin:0 25px;
+}
+
+.bg>.login>.left .inputStyle{
+    display: block;
+    width:250px;
+    height:36px;
+    padding:0 10px ;
+    border:1px solid #888;
+    box-sizing: border-box;
+    background:#fff;
+}
+.bg>.login>.left>.text>.register{
+    color:#333;
+    font-size:20px;
+    width:350px;
+    /* margin:10px auto; */
+}
+.bg>.login>.left>.text>.register>.inputMargin{
+    margin-top:15px;
+}
+.bg>.login>.left>.text>.register>label{
+    margin-top:19px
+}
+.bg>.login>.left>.text>h2{
+    margin:0 144px;
+    width:100px;
+}
+.bg>.login>.left>.text>.register .radioStyle{
+    border:1px solid #888;
+    box-sizing: border-box;
+    background:#fff;
+    display: block;
+    width:17px;
+    height:17px;
+    margin:10px;
+}
+.bg>.login>.left>.text>.register>.gender{
+    width:100px;
+    text-align:left;
+    margin-left:40px;
+    margin-bottom:10px;
+}
+.bg>.login>.left>.text .btn{
+    background:#38f;
+    display: block;
+    width:100px;
+    height:50px;
+    border-radius:10px;
+    border:0;
+    font-size:20px;
+    color:#fff;
+    outline:none;
+    cursor: pointer;
+    line-height:40px;
+    margin:0 144px;
+}
+/* 右侧样式 */
+.bg>.login>.right{
+    height:430px;
+    width:310px;
+    background:#eee;
+    text-align:center;
+    border-radius:10px;
+    border-right:2px solid #888888;
+}
+.bg>.login>.right>a>img{
+    margin-top:70px;
+
+}
+.bg>.login>.right>form{
+    width:250px;
+}
+.bg>.login>.right>form input{
+    display: block;
+    width:250px;
+    height:36px;
+    margin-top:20px;
+    padding:0 40px ;
+    border:1px solid #888;
+    box-sizing: border-box;
+    background:#fff;
+}
+.bg>.login>.right>form .uname{
+    left:2px;
+    top:2px;
+}
+.bg>.login>.right>form>.upwd{
+    left:2px;
+    top:58px;
+}
+.bg>.login>.right .check{
+    margin-top:10px;
+    margin-left:-8px;
+    height:16px;   
+    top:-8px;
+    left:-134px;
+}
+.bg>.login>.right span{
+    font-weight: bold;
+}
+.bg>.login>.right .btn{
+    display: block;
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border:0;
+    background:#38f url(../asets/Arrow.png) no-repeat 19px 24px;
+    outline:none;
+    margin-top:20px;
+    cursor:pointer;
+}
+.bg>.login>.right label{
+    color:#000;
+}
+.bg>.login>.right .textarea{
+    padding:13px 0 13px 25px;
+}
+.bg>.login>.right .textarea .goto{
+    color:#38f;
+    cursor:pointer;
+}
+
+

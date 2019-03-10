@@ -1,0 +1,203 @@
+.contain{
+    width:1200px;
+}
+.nav{
+    background:#FFB71C;
+    height:69px;
+    line-height:69px;
+    padding:0 50px;
+    margin:auto;
+    box-sizing:border-box;
+}
+.nav .loginForm{
+    right:0px;
+    top:1px;
+    width:350px;
+    height:300px;
+    background:#eee;
+    opacity:0.9;
+}
+.nav .loginForm h2{
+    margin:10px 0 0 31px;
+}
+.nav .loginForm .inputStyle{
+    display: block;
+    width:250px;
+    height:36px;
+    padding:0 10px ;
+    border:1px solid #888;
+    box-sizing: border-box;
+    background:#fff;
+    margin:10px auto 20px;
+}
+.nav .loginForm button{
+    color:#fff;
+    font-size:20px;
+    background:rgb(8, 160, 72);
+    width:250px;
+    margin:auto;
+    display: block;
+    height:36px;
+    border:0;
+}
+.nav .loginForm span{
+    text-align:center;
+}
+.nav .loginForm a{
+    color:#4ab71a;
+    text-decoration: underline;
+}
+.nav .loginForm .text{
+    margin:auto;
+    width:125px;
+}
+.nav>span{
+    color:#fff;
+    font-size:17px;
+    height:100%;
+    padding:0 24px;
+}
+.nav>span:first-child{
+    padding:0;
+    margin-right:51px;
+    margin-left:80px;
+    background:url("../asets/header-el.png") no-repeat 2px -4px;
+    width:200px;
+}
+.nav>span:last-child{
+    font-size:14px;
+    margin-right:146px;
+    cursor:pointer;
+}
+.chongzhi{
+    background-image: url("../asets//header-el.png");
+    background-repeat:no-repeat;
+    background-position: -10px -84px;
+    width:70px;
+    cursor:pointer;
+    left:350px;
+}
+.heightLight{
+    background-color:#FF9025;
+    width:70px;   
+    display: block; 
+    left:480px;
+    transition:left .3s linear 0s;
+}
+.raise{
+    z-index:10;
+}
+.chongzhi-query{
+    background-image: url("../asets//header-el.png");
+    background-repeat:no-repeat;
+    background-position: -143px -84px;
+    width:70px;
+    cursor:pointer;
+    left:480px;
+}
+.banner{
+    overflow:hidden;
+    margin-top:10px;
+}
+.banner>img{
+    width:1200px;
+}
+h2{
+    color:#222;
+    margin:20px 0 10px;
+    font-size:25px;
+}
+.range{
+    width:980px;
+    margin:auto;
+}
+.game>.left{
+    background:url("../asets/20180905095228251.jpg") no-repeat -253px -72px;
+}
+.game .zhichong{
+    width:480px;
+    height:257px;
+    background-color:transparent;
+    background-image:url("../asets/portal-hover.jpg");
+    top:257px;    
+    /* transition:top .5s linear 0s; */
+}
+.game .zhichong-area{
+    width:480px;
+    height:257px;
+    overflow:hidden;    
+}
+.game .placehold{
+    background:transparent;
+    width:480px;
+    height:257px;
+    z-index:10;
+    cursor:pointer;
+}
+.game .textarea{
+    width: 150px;
+    /* left:200px; */
+    top:91px;
+}
+.game .left .textarea{
+    left:165px;
+}
+.game .right .textarea{
+    left:172px;
+}
+.game .text{
+    font-size:30px;
+    font-weight: bold;
+}
+
+.game .left .link{
+    font-size:20px;
+    margin-left:33px;
+}
+.game .right .link{
+    font-size:20px;
+    margin-left:21px;
+}
+.game .right{
+    background:url("../asets/20180403092202595.jpg") no-repeat -239px -69px;
+}
+.quick>ul>li{
+    float:left;
+    width:150px;
+    border:1px solid #ccc;
+    height:150px;
+    text-align:center;
+}
+/* .quick>ul>li:first-child{
+    margin-left:40px;
+} */
+.quick>ul>li>a{
+    width:152px;
+    height:152px;
+    display: block;
+}
+.quick>ul>li>a>b{
+    background-image: url("../asets/icon-menu.png");
+    display: block;
+    width:63px;
+    height:63px;
+    margin:auto;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+.quick .two{
+    background-position: 0px -63px;
+}
+.quick .three{
+    background-position: 0px -126px;  
+}
+.quick .four{
+    background-position: 0px -189px;
+}
+.quick p{
+    width:72px;
+    margin:auto;
+}
+.quick{
+    margin-bottom:50px;
+}

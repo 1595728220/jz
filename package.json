@@ -1,0 +1,11 @@
+{
+  "name": "jz",
+  "version": "1.0.0",
+  "description": "web server",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "skb",
+  "license": "ISC"
+}

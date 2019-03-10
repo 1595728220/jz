@@ -1,0 +1,426 @@
+/*基础样式*/
+li.fontGreen,a.fontGreen,span.fontGreen{
+    color:#7A9E40;
+}
+.headline{
+    padding:16.8px 0;
+    font-size:24px;
+}
+.header{
+    height:84px;
+}
+.container{
+    overflow: hidden;
+    width:1500px;
+    border-width:1px 0;
+    border-style:solid;
+    border-color:#dcdee0;
+}
+/* 网页头部样式 */
+header>img {
+    border: 0;
+    padding-top:12px;
+}
+header ul>li{
+    float:left;
+    padding:0;
+    margin:0;
+    text-align:center;
+}
+header ul{
+    float:right;
+    margin-right:24px;
+    margin-top:30px;
+}
+
+header a{
+    
+    color:#555;
+    font-size:18px;
+    line-height:1.1;
+    border-right:1px solid #999;
+    width:126px;
+    display:block;
+}
+header a.last{
+    border-right:0;
+}
+header a.first{
+    width:90px;
+}
+header a.active {
+    color:#4ab71a
+}
+header a:hover{
+    color:#4ab71a
+}
+/* 首页轮播图的样式 */
+.banner{
+    height:492px;
+}
+.range{
+    width:1900px;
+    margin-left:-400px;
+}
+.slider{
+    height:492px;
+}
+.wrap{
+    width:1100px;
+}
+.banner p{
+    height:492px;
+    /* width:1900px; */
+    margin-left: -200px;
+    /* overflow: hidden; */
+    /* left:1px; */
+    /* transition:margin-left .5s linear .1s; */
+}
+.banner p>a{
+    float:left;
+}
+.banner p>a>img{
+    height:492px;
+}   
+.banner>.bc>div{
+    position: absolute;
+    left:0px;
+    top:462px;
+    width:100%;
+    text-align:center;
+}
+.banner>.bc>div>i{
+    border-radius: 50%;
+    display: inline-block;
+    width:14px;
+    height:14px;
+    background: #555;
+    margin:0 8px;
+    cursor: pointer;    
+}
+.banner>.bc>div>i.current{
+    background:#36cf56
+}
+.banner>.bc .fixWidth{
+    width:1500px;
+}
+/* 游戏展示列表的样式 */
+.games{
+    height:280px;
+    background-color: #e3e6e9;
+}
+.games .box{
+    position: relative;
+    padding-top:37px;
+}
+
+.games .page{
+    top:124px;
+    width:30px;
+    height:33px;
+    cursor: pointer;
+}
+.games .next {
+    right:-100px;
+    background:url(../asets/games-el.png) no-repeat -318px -45px;
+}
+.games .prev{
+    left:-100px;
+    background:url(../asets/games-el.png) no-repeat -288px -45px;
+}
+.games ul{
+    position: absolute;
+    top:3px;
+    left:0;
+    /* transition:margin-left .5s linear .1s */
+}
+.games .new .name{
+    color:#48b518;
+    border-top:2px solid #48b518
+}
+.games .hot .name{
+    color:#d93d1e;
+    border-top:2px solid #d93d1e
+}
+.games .name{
+    top:160px;  
+    left:0;
+    padding:4px 0 0 20px;
+    font-size:18px;
+}
+.games .name em{
+    font-size:12.6px;
+    font-style:normal;
+    color:#888;
+}
+.games li{
+    margin:0 8px 0 10px;
+    padding-bottom: 20;
+    background-position:0 200px;
+    cursor:pointer;
+}
+.games li i{
+    top:-3px;
+    right:-3px;
+    width:57px;
+    height:58px;
+}
+.games li p{
+    top:0;
+    left:0;
+    background-repeat:no-repeat;
+}
+.games .front{
+    background-position: 0 0;
+}
+.games .front span:last-child{
+    width:328px;
+    display:block;
+    height:143px;
+    border:10px solid #2F313E;
+    box-shadow: #888 1px 1px inset;
+    border-radius:50%;
+    margin-top:197px;
+}
+.games li,.games li p{
+    height:200px;
+    width:348px;
+}
+.games .back{
+    background-position: 0 -200px;     
+}
+.games .detail{
+    position: fixed;
+    left:18%;
+    top:10%;
+    width:0px;
+    height:0px;
+    background:#898989;
+    opacity: .9;
+    z-index:10;  
+    overflow:hidden;
+    /* transition:all .5s linear .1s; */
+}
+/* .games .detail b{
+    background:#898989 url("../asets/games-bg.png") 1px 1px;
+    width:24px;
+    height:24px;
+} */
+.games .detail span{
+    display:block;
+    color:#3f3;
+    font-size:30px;
+    font-weight:900;
+    text-align:center;
+    font-family:"幼圆";
+    opacity:1;
+    background:#808080;
+    margin:0;
+}
+.games .detail hr{
+    margin:0
+}
+.games .dy p{
+    background-image:url(../asets/games-dy.jpg)    
+}
+.games .bbc p{
+    background-image:url(../asets/games-bbc.jpg)
+}
+.games .mx p{
+    background-image: url(../asets/games-mx.jpg)
+}
+.games .df p{
+    background-image:url(../asets/games-dy.jpg)
+}
+.games .jzmy p{
+    background-image:url(../asets/games-jzmy.jpg)
+}
+.games .outbox{
+    position: relative;
+    height:223px;
+    overflow: hidden;
+}
+/* 新闻样式 */
+.news{
+    width:714px;
+}
+.news,.service{
+    margin:0 10px;
+    padding-bottom:48px;
+}
+.news img{
+    width:230px;
+    height: 120px;
+}
+.news pic {
+    margin-right:60px;
+    overflow: hidden;
+}
+.news .pic b{
+    background:#18f;
+}
+.news .pic .two,.news .pic .four{
+    height:0px; 
+    width:3px;
+}
+.news .pic .one,.news .pic .three{
+    width:0px;
+    height:3px;
+}
+.news .pic .one{
+  left:0px;
+  top:0px;
+}
+.news .pic .two{
+    top:0px;
+    left:0px;
+}
+.news .pic .three{
+    top:119px;
+   right:-1px;
+}
+.news .pic .four{
+  right:-1px;
+  bottom:0px;
+}
+.news div{
+    height:120px;
+    margin-top:18px;
+    padding-right:40px;
+}
+h1,h2{
+    font-weight: 400;
+    font-size:  12px;
+}
+.news h2,.service h2{
+    padding:24px 0 6px;
+    border-bottom:1px solid #d5d9dd;
+    font-size:18px;
+}
+.news .brief{
+    line-height: 22px;
+    color:  #888;
+    margin-left: 232px;
+    width: 441px;
+}
+.news .more{
+    top:22px;
+    right:0;
+    color:#4ab71a;
+}
+.news .more:hover{
+    font-size:13px;
+    color:rgb(6, 94, 6)
+}
+.news span{
+    margin-left:36px;
+}
+.news i{
+    width:9px;  
+    height:9px;
+    border-style:solid;
+    border-color:#d5d9dd;
+}
+.news .lt{
+    top:0;
+    left:250px;
+    border-width: 1px 0 0 1px;
+}
+.news .rb{
+    bottom:0;
+    right:0px;
+    border-width:0 1px 1px  0;
+}
+
+/* 服务样式 */
+.service{
+    width:346px;
+}
+.service ul{
+    height:290px;
+    border-bottom:1px solid #d5d9dd;
+}
+.service li a{
+    background:url(../asets/icon-service.png) no-repeat 0 0;
+}
+.contact .phone{
+    background:url(../asets/icon-service.png) no-repeat -265px 3px;
+    width:45px;
+    height:45px;
+    display:block;
+    margin:8px 39px;
+}
+/* .contact .phone:hover{
+    animation: turn 1.5s linear infinite;
+} */
+@keyframes turn{
+    0%{
+        transform: rotate(0reg)
+    }
+    25%{
+        transform: rotate(-25deg)
+    }
+    50%{
+        transform:rotate(0deg)
+    }
+    75%{
+        transform:rotate(20deg)
+    }
+    100%{
+        transform:rotate(0deg)
+    }
+}
+.contact{
+    height:80px;
+    margin-top:36px;    
+    padding-top:25px;
+    background-color:   #e3e6e9;
+    background-position: -226px 34px;
+}
+#eventArea{
+    height:105px;
+    width:346px;
+    /* visibility:hidden; */
+}
+.contact p{
+    line-height:1.8;
+    font-size:15.6px;
+}
+.service li{
+    width:115px;
+    margin-top:42px;
+}
+.service li .my{
+        background-position:0 0 ;
+}
+.service li a{
+    display: block;
+    padding-top:58px;
+    font-size:15.6px;
+}
+.service li a:hover{
+    color:#4ab71a;
+}
+.service li .pay{
+    background-position:-115px 0 ;
+}
+.service li .cs{
+    background-position:-232px 6px ;
+}
+.service li .dbg{
+    background-position:0 -97px ;
+}
+.service li .shop{
+    background-position:-113px -97px ;
+}
+
+/* 网页尾部样式 */
+.footer{
+    padding:36px 0;        
+}
+.footer,.footer a{
+    color:#888;
+}
+.footer a{
+    margin: 0 4px;  
+}

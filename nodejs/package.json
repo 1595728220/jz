@@ -1,0 +1,26 @@
+{
+  "name": "jz",
+  "version": "1.0.0",
+  "description": "jz",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1595728220/jz.git"
+  },
+  "keywords": [
+    "jz"
+  ],
+  "author": "skb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1595728220/jz/issues"
+  },
+  "homepage": "https://github.com/1595728220/jz#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}

@@ -1,0 +1,58 @@
+.header{
+    width:1000px;
+    margin:10px auto 10px;
+}
+.header>#erwei{
+    background:url("../asets/ad.png") no-repeat -26px 0px;
+    width:250px;
+    height:41px;
+    margin:19px 0 0 111px ;
+    z-index:100;    
+}
+.header .adPic{
+    background:#ddd url("../asets/ad.png") no-repeat -796px -33px;
+    width:168px;
+    left:73px;
+    top:41px;
+    border-top:.5px solid #333;
+    height:0px;
+    border-bottom:.5px solid #333;
+    /* transition:height .5s linear 0s; */
+}
+.header>ul{
+    margin-top:14px;
+}
+.header>ul>li{
+    float:left;
+    margin-left:12px;
+    font-size:16px;
+    margin-top:10px;
+}
+#mulu,.header>ul>li>a.current{
+    color:#8FDAAC;
+    cursor: pointer;
+}
+#mulu>span{
+    display: block;  
+    margin-top:10px;
+    margin-left:10px; 
+}
+#mulu>ul{
+    color:#333;
+    background:#aaa;
+    /* transition:height .3s linear 0s; */
+    width:100px;
+    overflow: hidden;
+}
+#mulu>ul>li{
+    border-bottom:1px solid #fff;
+    text-align: center;
+}
+#mulu>.show{
+    height:133px;
+    z-index:10
+}
+#mulu>.hidden{
+    height:0;
+    z-index:10
+}

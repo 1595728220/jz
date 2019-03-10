@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>极致-登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/init.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/get.js"></script>    
+    <script src="js/login.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+
+<body>
+    <div id="header" class="clear"></div>
+    <div class="bg bc">
+        <div class="login">
+            <!-- <div class="left fr" > -->
+            <div class="left fr tr" style="width:0;" id="register">
+                <div class="text">
+                    <h2> 注册</h2>    
+                    <form class="register clear" id="form">
+                        <label class="fl" for="uname">
+                            用户名： 
+                        </label>
+                        <input type="text" class="inputStyle fr inputMargin" name="uname">
+                        <label class="fl" for="upwd">
+                            密码：
+                        </label>
+                        <input type="password" class="inputStyle fr inputMargin" name="upwd">
+                        <label class="fl" for="repet">
+                            重复密码：             
+                        </label>
+                        <input type="password" class="inputStyle fr inputMargin" name="repet">
+                        <label class="fl" for="phone">
+                            电话：
+                        </label>
+                        <input type="text" class="inputStyle fr inputMargin" name="phone">
+                        <label class="fl" for="email">
+                            邮箱：
+                        </label>
+                            <input type="text" class="inputStyle fr inputMargin" name="email">
+                        <label class="fl">性别：</label>
+                        <label class="gender fl" >男
+                                <input type="radio" value="1" name="gender" class="radioStyle fl" checked>
+                            </label>
+                        <label  class="gender fl" >女
+                                <input type="radio" value="0" name="gender" class="radioStyle fl">
+                        </label>
+                        
+                    </form>
+                    <button class="btn" id="btn">完成注册</button>
+                </div>
+                <!-- <canvas id="c3" width="430px" height="430px"></canvas> -->
+            </div>
+            <div class="right fr">
+                <a href="index.html">
+                    <img src="asets/logo.png" class="bc">
+                </a>
+                <form class="bc pr">
+                    <img src="asets/user.png" class="uname pa">
+
+                    <input type="text" placeholder="请输入账号" autocomplete="off" id="uname">
+                    <img src="asets/pwd.png" class="upwd pa">
+                    <input type="password" placeholder="请输入密码" autocomplete="off" id="upwd">
+                    <div class="textarea clear">
+                        <label class="pr fl">
+                            记住账号
+                            <input type="checkbox" class="check pa " id="check">
+                        </label>
+                            <p class="goto fr" id="goto">去注册>></p> 
+                        <p class="fr">没有账号？</p>
+                    </div>
+                    <button class="btn bc" id="btnFinish"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
