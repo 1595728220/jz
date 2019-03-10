@@ -11,12 +11,29 @@
     box-sizing:border-box;
 }
 .nav .loginForm{
-    right:0px;
-    top:1px;
+    position:fixed;
+    right:38%;
+    top:27%;
     width:350px;
     height:300px;
-    background:#eee;
-    opacity:0.9;
+    background:rgba(238, 238, 238,0.8);
+    z-index:20;
+}
+.nav .loginForm img{
+    width:38px;
+    margin:16px;
+    transition:all .5s linear 0s;
+}
+.nav .loginForm img:hover{
+    animation: roll .2s linear 0s 1;
+}
+@keyframes roll{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(180deg)
+    }
 }
 .nav .loginForm h2{
     margin:10px 0 0 31px;
@@ -113,7 +130,7 @@ h2{
     margin:auto;
 }
 .game>.left{
-    background:url("../asets/portal-game-df.jpg") no-repeat -253px -72px;
+    background:url("../asets/portal-game-df.jpg") no-repeat;
 }
 .game .zhichong{
     width:480px;
@@ -160,7 +177,7 @@ h2{
     margin-left:21px;
 }
 .game .right{
-    background:url("../asets/portal-game-mx.jpg") no-repeat -239px -69px;
+    background:url("../asets/portal-game-mx.jpg") no-repeat;
 }
 .quick>ul>li{
     float:left;
