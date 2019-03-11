@@ -1,10 +1,20 @@
 const express = require('express')
 // const mysql = require('mysql');
 // let pool = mysql.createPool({user:'root'})
-const cookieParser = require("cookie-parser")
-const session = require("express-session")
-const pool = require("./pool");
-let app = express();
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const pool = require("./pool")
+let app = express()
+// app.use(cookieParser("sessiontest"))
+app.use(cookieParser("sessiontest"))
+// //调用中间件：解析请求消息中的Cookie头部，封装入req.cookies属性中
+// // app.use(cookieParser())
+app.use(session({
+    secret:"sessiontest",
+    resave:false,
+    saveUninitialized:false
+}))
+
 app.all("*", function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -13,18 +23,13 @@ app.all("*", function (req, res, next) {
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
 })
-app.use(cookieParser("sessiontest"))
-app.use(session({
-    secret:"sessiontest",
-    resave:true,
-    saveUninitialized:true
-}))
+
 //处理加载游戏新闻请求
 app.get("/news", (req, res) => {
     var sql = "select gid,title,content,addr,sm_img from jz.games,jz.imgs where imgId = iid and gid IN (select gameId from jz.news)";
     pool.query(sql, (err, result) => {
         if (err) throw err;
-        console.log(result)
+        // console.log(result)
         res.send(result)
     })
 })
@@ -33,7 +38,7 @@ app.get("/banner", (req, res) => {
     var sql = "select bid,img,addr from jz.banner"
     pool.query(sql, (err, result) => {
         if (err) throw err;
-        console.log(result)
+        // console.log(result)
         res.send(result)
     })
 })
@@ -51,12 +56,13 @@ app.get("/login", (req, res) => {
     var sql = `select uid,uname from jz.user where uname = ? and upwd = ?`
     pool.query(sql, [uname, upwd], (err, result) => {
         if (err) throw err
-        console.log(result)
+        // console.log(result)
         if (result.length === 0) {
             res.send({ code: -3, msg: "用户名或密码错误" })
         } else {
             req.session.user = result[0]
-            console.log(req.session.user.uid)
+            // console.log(req.session.user.uid)
+            req.session.save()
             res.send({ code: 1, msg: "登录成功" })
         }
     })
@@ -100,5 +106,10 @@ app.get("/game", (req, res) => {
         res.send(result)
     })
 
+})
+app.get("/session",(req,res)=>{
+    console.log(req.session.user)
+    if(req.session.user === undefined) res.send({code:"-1",msg:"用户未登陆"})
+    else res.send({code:"1",msg:"用户已登陆"})
 })
 app.listen(8080)

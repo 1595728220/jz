@@ -5,7 +5,7 @@
  * @param {*} checkElement 是否保存账号（在登陆页面使用）
  */
 function func_login(button,func,checkElement=null) {
-    console.log(checkElement)
+    // console.log(checkElement)
     button.onclick = function (e) {
         e.preventDefault();
         console.log("按钮被点击")

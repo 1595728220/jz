@@ -86,7 +86,7 @@
     function login() {
         var checkElement = document.getElementById("check")
         var button = document.getElementById("btnFinish")
-        console.log(button)
+        // console.log(button)
         uname.value = localStorage.getItem("uname")
         checkElement.checked = localStorage.getItem("check")
         //直接调用封装好的验证登录方法
@@ -218,7 +218,7 @@
     function otherJump(){
         var loc = location.href;
         var n = loc.indexOf("=")
-        console.log(loc,n)
+        // console.log(loc,n)
         if(n !== -1){
             var register = document.getElementById("register")
             var loginArea = document.getElementById("loginArea")
