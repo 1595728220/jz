@@ -353,15 +353,17 @@
     //添加电话摇晃效果
     function shock(){
         var eventArea = document.getElementById("eventArea")
-        eventArea.onmouseover = e=>{
+        eventArea.onmouseenter = e=>{
             e.preventDefault
             // if(e.target.nodeName === "DIV")
             // e.target.children[0].style.animation = "turn 1.5s linear infinite"
+            console.log("鼠标进入")
             e.target.nextElementSibling.style.animation = "turn 1.5s linear infinite"
         }
-        eventArea.onmouseout = e=>{
+        eventArea.onmouseleave = e=>{
             // if(e.target.nodeName === "DIV")
             // e.target.children[0].style.animation = ""
+            console.log("鼠标移出")
             e.target.nextElementSibling.style.animation = ""
         }
     }

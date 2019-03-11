@@ -1,4 +1,10 @@
-function func_login(button,checkElement=null) {
+/**
+ * 封装一个验证登陆的方法
+ * @param {*} button 需要传入绑定登陆的按钮元素
+ * @param {*} func 成功登陆后要执行的方法
+ * @param {*} checkElement 是否保存账号（在登陆页面使用）
+ */
+function func_login(button,func,checkElement=null) {
     console.log(checkElement)
     button.onclick = function (e) {
         e.preventDefault();
@@ -29,11 +35,14 @@ function func_login(button,checkElement=null) {
                 alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null
+                //history.go(-1)
+                func(1)
             } else {
                 console.log("登录失败")
                 alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null
+                func(0)
             }
         })
     }

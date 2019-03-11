@@ -90,7 +90,7 @@
         uname.value = localStorage.getItem("uname")
         checkElement.checked = localStorage.getItem("check")
         //直接调用封装好的验证登录方法
-        func_login(button,checkElement)
+        func_login(button,successLogin,checkElement)
         // button.onclick = function (e) {
         //     e.preventDefault();
         //     console.log("按钮被点击")
@@ -201,6 +201,7 @@
                 if (res.code === 1) {
                     var register = document.getElementById("register")
                     register.style.width = "0"
+                    loginArea.style.width = ""
                     alert(res.msg)
                 } else {
                     alert(res.msg + "，请重新填写注册信息")
@@ -224,5 +225,9 @@
             register.style.width = ""
             loginArea.style.width = "0px";
         }
+    }
+    //登陆成功后要执行的方法
+    function successLogin(sign) {
+       if(sign) history.go(-1)
     }
 })();

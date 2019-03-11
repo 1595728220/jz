@@ -380,6 +380,7 @@ h1,h2{
 #eventArea{
     height:105px;
     width:346px;
+    z-index:10;
     /* visibility:hidden; */
 }
 .contact p{
