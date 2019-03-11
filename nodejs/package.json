@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/1595728220/jz#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "mysql": "^2.16.0",
     "session": "^0.1.0"
   }

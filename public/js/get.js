@@ -5,7 +5,8 @@ function get(url, dataType) {
         // 创建xhr
         var xhr = new XMLHttpRequest(); //标准创建
         // 创建请求
-        xhr.open("get", url, true);
+        xhr.open("get", url, true)
+        xhr.withCredentials = true
         // 设置回调函数
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {

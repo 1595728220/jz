@@ -4,28 +4,30 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const pool = require("./pool")
+const cors = require("cors")
 let app = express()
 // app.use(cookieParser("sessiontest"))
-app.use(cookieParser())
-app.set("truse proxy",1)
+app.use(cookieParser("12345"))
+app.use(cors({
+    origin: 'http://127.0.0.1:5500',    //控制响应头Access-Control-Allow-Origin
+    credentials: true, //控制响应头Access-Control-Allow-Credentials
+    //这一项是为了跨域专门设置的
+    // maxAge: '1728000'
+}))
+
+// app.all('*', function(req, res, next) {
+//        res.header("Access-Control-Allow-Origin", req.headers.origin); //需要显示设置来源
+//          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//         res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+//         res.header("Access-Control-Allow-Credentials",true); //带cookies7     res.header("Content-Type", "application/json;charset=utf-8");
+//         next();
+//     });
 // // app.use(cookieParser())
 app.use(session({
     secret:"12345",
-    name:"testapp",
-    cookie:{maxAge:80000},
     resave:false,
     saveUninitialized:true
 }))
-
-app.all("*", function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "GET,POST");
-    res.header("X-Powered-By", "3.2.1");
-    res.header("Content-Type", "application/json;charset=utf-8");
-    next();
-})
-
 //处理加载游戏新闻请求
 app.get("/news", (req, res) => {
     var sql = "select gid,title,content,addr,sm_img from jz.games,jz.imgs where imgId = iid and gid IN (select gameId from jz.news)";
