@@ -6,13 +6,15 @@ const session = require('express-session')
 const pool = require("./pool")
 let app = express()
 // app.use(cookieParser("sessiontest"))
-app.use(cookieParser("sessiontest"))
-// //调用中间件：解析请求消息中的Cookie头部，封装入req.cookies属性中
+app.use(cookieParser())
+app.set("truse proxy",1)
 // // app.use(cookieParser())
 app.use(session({
-    secret:"sessiontest",
+    secret:"12345",
+    name:"testapp",
+    cookie:{maxAge:80000},
     resave:false,
-    saveUninitialized:false
+    saveUninitialized:true
 }))
 
 app.all("*", function (req, res, next) {
@@ -60,9 +62,7 @@ app.get("/login", (req, res) => {
         if (result.length === 0) {
             res.send({ code: -3, msg: "用户名或密码错误" })
         } else {
-            req.session.user = result[0]
-            // console.log(req.session.user.uid)
-            req.session.save()
+            req.session.user = result[0].uname
             res.send({ code: 1, msg: "登录成功" })
         }
     })
@@ -108,8 +108,7 @@ app.get("/game", (req, res) => {
 
 })
 app.get("/session",(req,res)=>{
-    console.log(req.session.user)
     if(req.session.user === undefined) res.send({code:"-1",msg:"用户未登陆"})
-    else res.send({code:"1",msg:"用户已登陆"})
+    else res.send({code:"1",msg:req.session.user})
 })
 app.listen(8080)
