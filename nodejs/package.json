@@ -21,6 +21,7 @@
   "homepage": "https://github.com/1595728220/jz#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "session": "^0.1.0"
   }
 }

@@ -18,7 +18,14 @@
             用于保存本网站需要发布的游戏新闻信息，游戏的具体信息需要到gmaes中查询
         | user         |
             用于保存注册的用户信息 可用于测试的用户名密码：dangdang,123456
-4.
+4.后台web服务器
+    以下路由
+        /news
+        /banner
+        /login
+            使用session存储登陆成功后的用户信息
+        /register
+        /game
 
         
         

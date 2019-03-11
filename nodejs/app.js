@@ -1,6 +1,8 @@
-const express = require('express');
+const express = require('express')
 // const mysql = require('mysql');
 // let pool = mysql.createPool({user:'root'})
+const cookieParser = require("cookie-parser")
+const session = require("express-session")
 const pool = require("./pool");
 let app = express();
 app.all("*", function (req, res, next) {
@@ -11,6 +13,12 @@ app.all("*", function (req, res, next) {
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
 })
+app.use(cookieParser("sessiontest"))
+app.use(session({
+    secret:"sessiontest",
+    resave:true,
+    saveUninitialized:true
+}))
 //处理加载游戏新闻请求
 app.get("/news", (req, res) => {
     var sql = "select gid,title,content,addr,sm_img from jz.games,jz.imgs where imgId = iid and gid IN (select gameId from jz.news)";
@@ -40,12 +48,15 @@ app.get("/login", (req, res) => {
     if (!Reg.test(upwd)) {
         res.send({ code: -2, msg: "密码格式错误" })
     }
-    var sql = `select uid from jz.user where uname = ? and upwd = ?`
+    var sql = `select uid,uname from jz.user where uname = ? and upwd = ?`
     pool.query(sql, [uname, upwd], (err, result) => {
         if (err) throw err
+        console.log(result)
         if (result.length === 0) {
             res.send({ code: -3, msg: "用户名或密码错误" })
         } else {
+            req.session.user = result[0]
+            console.log(req.session.user.uid)
             res.send({ code: 1, msg: "登录成功" })
         }
     })
