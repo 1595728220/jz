@@ -1,22 +1,5 @@
 (() => {
     nologin()
-    function nologin() {
-        getSession(switchLogin)
-        function switchLogin(result) {
-            var qiehuan = document.getElementById("qiehuan")
-            console.log(result)
-            if (result.code === "-1") {
-                //未登陆  
-                qiehuan.innerHTML = `<span class="cp" id="toLogin">登陆充值中心</span>`
-            } else {
-                //已登陆
-                qiehuan.innerHTML = `<span>${result.msg},欢迎回来~</span>
-                <span class="cp" id="toLogout" onclick="sessionLogout()")">退出登陆</span>
-                 `
-                //  logout()
-            }
-        }
-    }
     console.log("chongzhi.js文件已加载")
     //在页面加载完成后调用定义好的方法
     window.onload = function () {
