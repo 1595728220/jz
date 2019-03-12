@@ -19,7 +19,6 @@
         mulu.onclick = e => {
             if (e.target === mulu) {
                 var list = e.target.children[1]
-                console.log(list)
                 if (list.dataset.show === "hidden") {
                     list.className = "pa show tr"
                     e.target.children[0].className = "triangle-right fr"

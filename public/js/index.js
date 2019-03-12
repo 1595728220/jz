@@ -127,7 +127,6 @@
             var length = div.children.length
             //利用冒泡为小圆点添加点击事件
             div.addEventListener("click", e => {
-                console.log("click is run")
                 //获取标签名为i的元素
                 if (e.target.nodeName === "I") {
                     //如果定时器在运行，停止定时器
@@ -136,7 +135,6 @@
                     e.target.className = "current"
                     //取得被点击元素的下标值
                     n = parseInt(e.target.dataset.index)
-                    console.log(n)
                     //控制等待3s后进行轮播
                     sign = 0
                     //改变参数与点击的元素下标相适应
@@ -334,11 +332,9 @@
         var eventArea = document.getElementById("eventArea")
         eventArea.onmouseenter = e=>{
             e.preventDefault
-            console.log("鼠标进入")
             e.target.nextElementSibling.style.animation = "turn 1.5s linear infinite"
         }
         eventArea.onmouseleave = e=>{
-            console.log("鼠标移出")
             e.target.nextElementSibling.style.animation = ""
         }
     }
