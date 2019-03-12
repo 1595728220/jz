@@ -3,8 +3,8 @@
     修改get.js文件在xhr.open后请求前设置xhr.withCredentials = true;修改后端的响应头在cors模块中添加参数credentials: true，问题得以解决
 1.本项目是一个游戏类的网站，本网站中使用原生的Js，未引入任何第三方框架、库
 2.项目的目录结构为
-    .../jz 存放一个web服务器，开启使用express中的api指定项目的资源文件夹为public，访问的端口号为5500
-        /nodejs 存放一个web后台服务器，使用express、pool.通过不同的路由执行请求的响应、操作数据库并返回json格式的数据.
+    .../jz 存放一个web服务器
+        /nodejs 存放一个web后台服务器
         /pubic 存放html文件
             /asets  存放项目中使用的图片文件
             /css    存放项编写的css文件
@@ -22,13 +22,33 @@
         | user   |
             用于保存注册的用户信息 可用于测试的用户名密码：dangdang,123456
 4.后台web服务器
+    使用了express,pool,cors模块，设置访问的端口号为8080，只允许本机5500端口跨域访问
     以下请求地址
         /news
+            接收查询游戏新闻的请求，返回游戏新闻json格式数据
         /banner
+            接收查询首页轮播图的请求，返回图片信息的Json格式数据
         /login
-            使用session存储登陆成功后的用户信息
+            接收验证登陆的请求，根据请求的参数查询数据库，使用session存储登陆成功后的用户信息，返回登陆状态的json格式信息
         /register
+            接收注册的请求，进行格式验证，通过则插入数据库中，返回注册状态的json格式信息
         /game
+            接收查询游戏展示的请求，返回要展示的游戏信息json格式数据
+        /session
+            接收查询当前服务器端session的存储情况并返回一个json格式数据
+        /logout
+            接收登出请求删除服务器端存储的session，并返回完成消息
+5.前端静态资源服务器
+    使用express模块中的static方法指定静态资源存放在public文件夹下，并设置访问的端口为5500
+6.静态页面
+    首页模块            index 
+    页尾模块            footer 
+    页头模块            header 
+    登陆模块            login 
+    充值模块            chongzhi 
+    个人中心模块         person 
+    客服模块             service 
+    关于我们模块         about
 
         
         

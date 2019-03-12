@@ -1,12 +1,9 @@
 const express = require('express')
-// const mysql = require('mysql');
-// let pool = mysql.createPool({user:'root'})
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const pool = require("./pool")
 const cors = require("cors")
 let app = express()
-// app.use(cookieParser("sessiontest"))
 app.use(cookieParser("12345"))
 app.use(cors({
     origin: 'http://127.0.0.1:5500',    //控制响应头Access-Control-Allow-Origin
@@ -14,15 +11,6 @@ app.use(cors({
     //这一项是为了跨域专门设置的
     // maxAge: '1728000'
 }))
-
-// app.all('*', function(req, res, next) {
-//        res.header("Access-Control-Allow-Origin", req.headers.origin); //需要显示设置来源
-//          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//         res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-//         res.header("Access-Control-Allow-Credentials",true); //带cookies7     res.header("Content-Type", "application/json;charset=utf-8");
-//         next();
-//     });
-// // app.use(cookieParser())
 app.use(session({
     secret:"12345",
     resave:false,
@@ -83,14 +71,14 @@ app.get("/register", (req, res) => {
     // console.log(uname)
     pool.query(sql, [uname], (err, result) => {
         if (err) throw err
-        console.log(result)
+        // console.log(result)
         if (result.length === 1) {
             res.send({ code: -1, msg: "用户名已经存在" })
         } else {
             sql = "insert into jz.user values(null,?,?,?,?,?)"
             pool.query(sql, [uname, upwd, phone, email, gender], (err, result) => {
                 if (err) throw err
-                console.log(result)
+                // console.log(result)
                 if (result.affectedRows > 0) {
                     res.send({ code: 1, msg: "注册成功" })
                 } else {

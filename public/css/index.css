@@ -378,7 +378,7 @@ h1,h2{
     background-position: -226px 34px;
 }
 #eventArea{
-    height:105px;
+    height:80px;
     width:346px;
     z-index:10;
     /* visibility:hidden; */
