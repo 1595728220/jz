@@ -46,7 +46,6 @@
         var uname = document.getElementById("uname")
         var upwd = document.getElementById("upwd")
         var loginForm = document.getElementById("loginForm")
-        // console.log(button, uname, upwd)
         func_login(button, successLogin)
     }
     //展开登陆窗口的方法

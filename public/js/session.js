@@ -6,7 +6,6 @@ function getSession(callback){
 function checkSession(){
     getSession(callback)
     function callback(result){
-        console.log(result)
         if(result.code === "-1"){
             location.href = "/login.html"
         }else{
@@ -17,7 +16,6 @@ function checkSession(){
 //定义函数清空session
 function sessionLogout(){
         get("http://127.0.0.1:8080/logout").then(function(result){
-            console.log(result.msg)
             history.go(0)
         })
 }
@@ -26,7 +24,6 @@ function nologin() {
     getSession(switchLogin)
     function switchLogin(result) {
         var qiehuan = document.getElementById("qiehuan")
-        console.log(result)
         if (result.code === "-1") {
             //未登陆  
             qiehuan.innerHTML = `<span class="cp" id="toLogin">登陆充值中心</span>`
