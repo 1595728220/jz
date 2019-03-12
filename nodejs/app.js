@@ -113,4 +113,8 @@ app.get("/session",(req,res)=>{
     if(req.session.user === undefined) res.send({code:"-1",msg:"用户未登陆"})
     else res.send({code:"1",msg:req.session.user})
 })
+app.get("/logout",(req,res)=>{
+    delete req.session.user
+    res.send({code:1,msg:"清空session"})
+})
 app.listen(8080)

@@ -1,4 +1,22 @@
 (() => {
+    nologin()
+    function nologin() {
+        getSession(switchLogin)
+        function switchLogin(result) {
+            var qiehuan = document.getElementById("qiehuan")
+            console.log(result)
+            if (result.code === "-1") {
+                //未登陆  
+                qiehuan.innerHTML = `<span class="cp" id="toLogin">登陆充值中心</span>`
+            } else {
+                //已登陆
+                qiehuan.innerHTML = `<span>${result.msg},欢迎回来~</span>
+                <span class="cp" id="toLogout" onclick="sessionLogout()")">退出登陆</span>
+                 `
+                //  logout()
+            }
+        }
+    }
     console.log("chongzhi.js文件已加载")
     //在页面加载完成后调用定义好的方法
     window.onload = function () {
@@ -6,6 +24,7 @@
         zhichong()
         show_login()
         login()
+        // logout()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {
@@ -40,34 +59,48 @@
             }
         })
     }
+    //定义登陆的方法
     function login() {
         var button = document.getElementById("button")
         var uname = document.getElementById("uname")
         var upwd = document.getElementById("upwd")
         var loginForm = document.getElementById("loginForm")
-        console.log(button, uname, upwd)
-        func_login(button,successLogin)
+        // console.log(button, uname, upwd)
+        func_login(button, successLogin)
     }
+    //展开登陆窗口的方法
     function show_login() {
         //获取展示和关闭按钮的元素
         var toLogin = document.getElementById("toLogin")
         var closeLogin = document.getElementById("closeLogin")
         var loginForm = document.getElementById("loginForm")
-        toLogin.onclick = function (e) {
-            e.preventDefault
-            loginForm.style.width = "350px"
-            loginForm.style.height = "300px"
+        if (toLogin) {
+            toLogin.onclick = function (e) {
+                e.preventDefault
+                loginForm.style.width = "350px"
+                loginForm.style.height = "300px"
+            }
         }
-        closeLogin.onclick = function (e) {
-            e.preventDefault
-            loginForm.style.width = "0";
-            loginForm.style.height = "0"
+        if (closeLogin) {
+            closeLogin.onclick = function (e) {
+                e.preventDefault
+                loginForm.style.width = "0";
+                loginForm.style.height = "0"
+            }
         }
     }
+    //成功登陆后要执行的方法
     function successLogin(sign) {
         if (sign) {
-            loginForm.style.width = "0";
+            loginForm.style.width = "0"
             loginForm.style.height = "0"
+            history.go(0)
         }
     }
+    // //定义退出登陆的方法
+    // function logout(){
+    //     var toLogout = document.getElementById("toLogout")
+    //     console.log(toLogout)
+    //     sessionLogout(toLogout)
+    // }
 })();
