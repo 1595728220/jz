@@ -4,15 +4,11 @@ function getSession(callback){
 }
 // 定义函数检查session
 function checkSession(){
-    // get("http://127.0.0.1:8080/session").then(callback)
     getSession(callback)
     function callback(result){
         console.log(result)
         if(result.code === "-1"){
-        //    alert("将跳转登陆")
-        //    setTimeout(()=>{
             location.href = "/login.html"
-        //    },1000)            
         }else{
             console.log("用户已登陆")
         }
@@ -20,13 +16,10 @@ function checkSession(){
 }
 //定义函数清空session
 function sessionLogout(){
-    // button.onclick = ()=>{
         get("http://127.0.0.1:8080/logout").then(function(result){
             console.log(result.msg)
             history.go(0)
         })
-        
-    // }
 }
 //定义一个免登陆的方法，需要有一个id为qiehuan的标签作为容器
 function nologin() {
@@ -42,7 +35,6 @@ function nologin() {
             qiehuan.innerHTML = `<span>${result.msg},欢迎回来~</span>
             <span class="cp" id="toLogout" onclick="sessionLogout()")">退出登陆</span>
              `
-            //  logout()
         }
     }
 }

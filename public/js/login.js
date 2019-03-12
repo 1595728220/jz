@@ -12,7 +12,6 @@
         if (deltaTime > 40) {
             deltaTime = 40
         }
-        // console.log(square)
         //获取画笔对象
         var ctx = c3.getContext("2d")
         ctx.clearRect(0, 0, 430, 430)
@@ -60,24 +59,11 @@
         textLoop();
         function textLoop() {
             console.log("智能动画正在运行...")
-            // console.log(square)
             var now = Date.now()
             deltaTime = now - lastTime
             lastTime = now
             draw(square, wall, deltaTime)
             requestAnimationFrame(textLoop)
-            // if(square.x>wall.maxW || square.x<wall.minW){
-            //     square.alpha = Math.PI-square.alpha
-            // }
-            // if(square.y >wall.maxH || square.y<wall.minH){
-            //     square.alpha = 2*Math.PI-square.alpha
-            // }
-            // square.x += square.speed*deltaTime*Math.cos(square.alpha)
-            // square.y += square.speed*deltaTime*Math.sin(square.alpha)
-
-            // var left = document.getElementsByClassName("text")[0]
-            // left.style.marginLeft = square.x+"px";
-            // left.style.marginTop = square.y+"px";
         }
     }
     //以上两个函数未使用
@@ -86,62 +72,10 @@
     function login() {
         var checkElement = document.getElementById("check")
         var button = document.getElementById("btnFinish")
-        // console.log(button)
         uname.value = localStorage.getItem("uname")
         checkElement.checked = localStorage.getItem("check")
         //直接调用封装好的验证登录方法
         func_login(button,successLogin,checkElement)
-        // button.onclick = function (e) {
-        //     e.preventDefault();
-        //     console.log("按钮被点击")
-        //     var name = uname.value;
-        //     var pwd = upwd.value;
-        //     var check_value = check.checked;
-        //     var Reg = /^\w{6,12}$/
-        //     // console.log(check_value)
-        //     if (!Reg.test(name)) {
-        //         alert("用户名格式不正确")
-        //         uname.value = null
-        //         upwd.value = null
-        //         return
-        //     }
-        //     if (!Reg.test(pwd)) {
-        //         alert("密码格式不正确")
-        //         uname.value = null
-        //         upwd.value = null
-        //         return
-        //     }
-        //     // console.log(check_value)
-        //     // console.log(name, pwd)
-        //     get(`http://127.0.0.1:8080/login?uname=${name}&upwd=${pwd}`).then(function (result) {
-        //         if (result.code === 1) {
-        //             console.log("登录成功")
-        //             alert(result.msg)
-        //             if (check_value) {
-        //                 localStorage.setItem("uname", name)
-        //                 localStorage.setItem("check", check_value)
-        //             } else {
-        //                 localStorage.clear();
-        //                 localStorage.setItem("check", check_value)
-        //             }
-        //             upwd.value = null
-        //             window.location.href = "index.html"
-        //         } else {
-        //             console.log("登录失败")
-        //             alert(result.msg)
-        //             if (check_value) {
-        //                 localStorage.setItem("uname", name)
-        //                 localStorage.setItem("check", check_value)
-        //             } else {
-        //                 localStorage.clear();
-        //                 localStorage.setItem("check", check_value)
-        //                 uname.value = null
-        //             }
-        //             upwd.value = null
-        //         }
-        //     })
-
-        // }
     }
     //设置点击去注册弹出注册
     function register() {
@@ -166,9 +100,7 @@
             // 循环遍历数组，取出表单内的值
             for (var i = 0; i < len; i++) {
                 if (list[i].nodeName === "INPUT") {
-                    // console.log(list[i])
                     nameStr = list[i].name.toString()
-                    // console.log(nameStr)
                     //检查表单内数据是否为空，为空重新注册
                     if (list[i].value === "") {
                         alert("请完善注册信息")
@@ -187,14 +119,12 @@
                 }
                 // 取出raio中的值
                 if (list[i].className === "gender fl") {
-                    // console.log(list[i].children[0].checked)
                     if (list[i].children[0].checked) {
                         nameStr = list[i].children[0].name.toString()
                         data[nameStr] = list[i].children[0].value
                         url += nameStr + "=" + list[i].children[0].value
                     }
                 }
-                // console.log(url)
             }
             //发送注册请求
             get(url).then(function (res) {
@@ -218,7 +148,6 @@
     function otherJump(){
         var loc = location.href;
         var n = loc.indexOf("=")
-        // console.log(loc,n)
         if(n !== -1){
             var register = document.getElementById("register")
             var loginArea = document.getElementById("loginArea")

@@ -7,13 +7,11 @@
         zhichong()
         show_login()
         login()
-        // logout()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {
         var nav = document.getElementById("nav")
         var heightLight = document.getElementById("heightLight")
-        // console.log(nav)
         nav.addEventListener("mouseover", e => {
             e.preventDefault
             if (e.target.dataset.raise === "left") {
@@ -80,10 +78,4 @@
             history.go(0)
         }
     }
-    // //定义退出登陆的方法
-    // function logout(){
-    //     var toLogout = document.getElementById("toLogout")
-    //     console.log(toLogout)
-    //     sessionLogout(toLogout)
-    // }
 })();

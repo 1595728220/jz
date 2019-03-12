@@ -15,7 +15,6 @@ function get(url, dataType) {
                 else if (dataType === "text")
                     res = xhr.responseText
                 resolve(res)
-                //open();
             }
         }
         xhr.send(null)

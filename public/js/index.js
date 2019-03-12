@@ -24,21 +24,18 @@
     //定义函数实现将数据显示到视图，并挂载对应的标签到dom树上，返回一个promise对象
     function banner(res) {
         return new Promise(function (resolve, reject) {
-            // console.log(1);
             //将第一张图复制到数组末尾
             res[res.length] = res[0]
             //定义要加载的html文本字符串
             var html = "";
             //定义修改后的的数组长度
             var length = res.length;
-            // console.log(length)
             //for循环遍历数据数组并拼接到相应的html标签中
             for (var i of res) {
                 html += `<a href="${i.addr}" style="">
                 <img src="${i.img}" alt="" class="fixWidth">
                 </a>`
             }
-            //    console.log(2);
             //挂载到dom树上
             imgs.innerHTML = html;
             //设置外层用于包裹图片的父元素的宽度
@@ -80,7 +77,6 @@
         click()
         //该方法封装了智能动画
         function smartLoop() {
-            // console.log("smartLoop running...")
             //定义开始执行时的时间节点
             var now = new Date()
             //计算中间的时间间隔
@@ -99,7 +95,6 @@
         }
         //轮播实现的方法
         function lunbo() {
-            // console.log("lunbo running...")
             //如果累计的边界不小于父元素的宽度，那么重置参数
             if (juli >= totalWidth) {
                 juli = 1500
@@ -119,21 +114,17 @@
                 left = -juli
                 juli = 1500 * (n + 1)
             }
-            // console.log(left, juli, totalWidth, n)
             //调用setClass方法对下标除n外的元素清除样式类，并为下标为n的元素添加current样式,特殊的n=7时返回0
             setClass(n < length - 1 ? n : 0)
             //将属性值添加到父元素的style属性中
             imgs.style.left = left + "px"
-            // console.log(imgs.offsetLeft)
         }
         //实现点击小圆点切换图片
         function click() {
             //获取小圆点的父元素
             var div = document.getElementsByClassName("round")[0]
-            // console.log(div)
             // 获取小圆点的元素的数组
             var length = div.children.length
-            // console.log(iList)
             //利用冒泡为小圆点添加点击事件
             div.addEventListener("click", e => {
                 console.log("click is run")
@@ -162,7 +153,6 @@
         }
         function setClass(index) {
             var iList = document.getElementById("round").children
-            // console.log(iList.length)
             for (var i = 0; i < iList.length; i++) {
                 if (i !== index) {
                     iList[i].className = ""
@@ -182,7 +172,6 @@
     }
     //定义函数实现将游戏数据显示到视图，返回promise对象
     function game(res) {
-        // console.log(res)
         return new Promise(function (resolve, reject) {
             var html = ""
             var len = res.length
@@ -227,8 +216,6 @@
                 // 将触发事件的元素的下一个兄弟元素的style属性值清空
                 e.target.parentElement
                     .children[1].style = ""
-                // console.log(e)
-                // e.target.parent.getElementByClassName("back")
             }
         })
         //设置鼠标移出时恢复效果
@@ -237,11 +224,8 @@
                 //鼠标移入时恢复style里的值
                 e.target.parentElement
                     .children[1].style = "overflow: hidden;top:200px;height:0px"
-                // console.log(e)
-                // e.target.parent.getElementByClassName("back")
             }
         })
-        // console.log(liList)
         //设置点击切换图片
         games.addEventListener("click", function (e) {
             if (e.target.nodeName === "I") {
@@ -266,25 +250,20 @@
             e.preventDefault;
             if (e.target.dataset.p === "back") {
                 var div = e.target.parentElement.parentElement.children[1]
-                // console.log(div)
                 div.style.width = "1200px"
                 div.style.height = "600px"
-                // div.style.display = "block"
             }
         })
         games.addEventListener("mouseout", function (e) {
-            // console.log(e.target.nodeName)
             if (e.target.dataset.div === "detail") {
                 e.target.style.width = "0px"
                 e.target.style.height = "0px"
-                // e.target.style.display = "none"
             }
         })
     }
     // 加载新闻列表
     function loadNews() {
         get("http://127.0.0.1:8080/news").then(function (res) {
-            // console.log(res)
             return news(res)
         }).then(border)
     }
@@ -355,14 +334,10 @@
         var eventArea = document.getElementById("eventArea")
         eventArea.onmouseenter = e=>{
             e.preventDefault
-            // if(e.target.nodeName === "DIV")
-            // e.target.children[0].style.animation = "turn 1.5s linear infinite"
             console.log("鼠标进入")
             e.target.nextElementSibling.style.animation = "turn 1.5s linear infinite"
         }
         eventArea.onmouseleave = e=>{
-            // if(e.target.nodeName === "DIV")
-            // e.target.children[0].style.animation = ""
             console.log("鼠标移出")
             e.target.nextElementSibling.style.animation = ""
         }
