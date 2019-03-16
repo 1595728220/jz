@@ -5,8 +5,9 @@
     window.onload = function () {
         heightLight()
         zhichong()
-        show_login()
-        login()
+        smallLogin()
+        // show_login()
+        // login()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {
@@ -39,42 +40,5 @@
                 e.target.previousElementSibling.style.top = "257px"
             }
         })
-    }
-    //定义登陆的方法
-    function login() {
-        var button = document.getElementById("button")
-        var uname = document.getElementById("uname")
-        var upwd = document.getElementById("upwd")
-        var loginForm = document.getElementById("loginForm")
-        func_login(button, successLogin)
-    }
-    //展开登陆窗口的方法
-    function show_login() {
-        //获取展示和关闭按钮的元素
-        var toLogin = document.getElementById("toLogin")
-        var closeLogin = document.getElementById("closeLogin")
-        var loginForm = document.getElementById("loginForm")
-        if (toLogin) {
-            toLogin.onclick = function (e) {
-                e.preventDefault
-                loginForm.style.width = "350px"
-                loginForm.style.height = "300px"
-            }
-        }
-        if (closeLogin) {
-            closeLogin.onclick = function (e) {
-                e.preventDefault
-                loginForm.style.width = "0";
-                loginForm.style.height = "0"
-            }
-        }
-    }
-    //成功登陆后要执行的方法
-    function successLogin(sign) {
-        if (sign) {
-            loginForm.style.width = "0"
-            loginForm.style.height = "0"
-            history.go(0)
-        }
     }
 })();

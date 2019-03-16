@@ -1,0 +1,43 @@
+/* 导航条样式 */
+.nav{
+    height:76px;
+    border-bottom:3px solid #2A87D7;
+}
+.nav .bg{
+    background-image:url(../asets/header.png);
+    background-repeat:no-repeat;
+    display:block; 
+}
+.nav .title{
+    margin-top:29px;
+    height:31px;
+    width:200px;
+}
+#qiehuan{
+    text-align:right;
+    margin-right:5px;
+}
+.nav .right .items ul a{
+    margin-right:5px;
+    height:30px;
+    width:86px;
+    border:1px solid #CECECE;
+    border-bottom:0;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.nav .items{
+    margin-top:-23px;
+}
+.nav .service{
+    background-position-x:-6px;
+    background-position-y:-97px;
+}
+.nav .chongzhi{
+    background-position-x:-3px;
+    background-position-y:-33px;
+}
+.nav .zhanghao{
+    background-position-x:-107px;
+    background-position-y:-33px;
+}
