@@ -16,6 +16,7 @@
 #qiehuan{
     text-align:right;
     margin-right:5px;
+    font-size:18px;
 }
 .nav .right .items ul a{
     margin-right:5px;
@@ -40,4 +41,84 @@
 .nav .zhanghao{
     background-position-x:-107px;
     background-position-y:-33px;
+}
+/* 客服专区入口 */
+.rukou{
+    margin:auto;
+    padding:30px 64px;
+}
+.rukou .bg{
+    background-image:url("../asets/index-game.jpg");
+}
+.rukou span{
+    width:477px;
+    height:277px;
+    background-repeat:no-repeat;
+    background-position-y:-10px;    
+}
+.rukou .bg:hover{
+    background-image:url("../asets/index-game-hover.jpg");
+    
+}
+.rukou .left{
+    display: block;
+}
+
+.rukou .right{
+    display:block;
+    background-position-x:-483px;
+}
+
+/* 分割线 */
+.split{
+    background: url("../asets/game-bg.jpg") 0px -333px;
+    width:1200px;
+    height:13px;
+}
+/* 底部功能按钮部分 */
+.btnList{
+    margin-top:33px;
+    height:165px;
+    width:1200px;
+    box-sizing: border-box;
+    border:1px solid #bbb;
+    padding:14px 0px;
+}
+.btnList li{
+    display:block;
+    height:140px;
+    width:239px;
+    box-sizing:border-box;
+    border-right:2px dashed #aaa;
+    padding:13px 35px;
+    font-size:15px;
+}
+.btnList .bg{
+    display:block;
+    width:50px;
+    height:50px;
+    background-image: url("../asets/ico-service.png");
+    background-repeat:no-repeat;
+    margin-right:16px;
+}
+.btnList .one{
+    background-position-y:-490px;
+}
+.btnList .two{
+    background-position-y:-420px;
+}
+.btnList .three{
+    background-position-y:-1750px;
+}
+.btnList .four{
+    background-position-y:-210px;
+}
+.btnList .five{
+    background-position-y:-1960px;
+}
+.btnList p{
+    margin-top:50px;
+}
+.btnList li:last-child{
+    border:0;
 }

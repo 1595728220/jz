@@ -6,8 +6,6 @@
         heightLight()
         zhichong()
         smallLogin()
-        // show_login()
-        // login()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {
