@@ -122,3 +122,9 @@
 .btnList li:last-child{
     border:0;
 }
+/* 热线电话 */
+.hotline{
+    position:fixed;
+    right:0;
+    top:30%;
+}
