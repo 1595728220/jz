@@ -16,6 +16,10 @@ app.use(session({
     resave:false,
     saveUninitialized:true
 }))
+// //使用中间件拦截不合法的账号密码
+// app.use("/login",(req,res,next)=>{
+
+// })
 //处理加载游戏新闻请求
 app.get("/news", (req, res) => {
     var sql = "select gid,title,content,addr,sm_img from jz.games,jz.imgs where imgId = iid and gid IN (select gameId from jz.news)";
