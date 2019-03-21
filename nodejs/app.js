@@ -1,7 +1,6 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-// const pool = require("./pool")
 const cors = require("cors")
 const loadRouter = require("./routes/load")
 const userRouter = require("./routes/user")
