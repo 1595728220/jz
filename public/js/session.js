@@ -1,6 +1,6 @@
 //定义访问session的方法，参数回调
 function getSession(callback){
-    get("http://127.0.0.1:8080/session").then(callback)
+    get("http://127.0.0.1:8080/user/session").then(callback)
 }
 // 定义函数检查session
 function checkSession(){
@@ -15,7 +15,7 @@ function checkSession(){
 }
 //定义函数清空session
 function sessionLogout(){
-        get("http://127.0.0.1:8080/logout").then(function(result){
+        get("http://127.0.0.1:8080/user/logout").then(function(result){
             history.go(0)
         })
 }

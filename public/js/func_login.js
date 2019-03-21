@@ -24,7 +24,7 @@ function func_login(button,func,checkElement=null) {
             upwd.value = null
             return
         }
-        get(`http://127.0.0.1:8080/login?uname=${name}&upwd=${pwd}`).then(function (result) {
+        get(`http://127.0.0.1:8080/user/login?uname=${name}&upwd=${pwd}`).then(function (result) {
             if (result.code === 1) {
                 console.log("登录成功")
                 alert(result.msg)
