@@ -1,5 +1,5 @@
-(()=>{
+{
     checkSession()    
     window.onload = ()=>{
     }
-})();
+}

@@ -1,4 +1,4 @@
-(() => {
+{
     //调用定义好的方法加载页面中的内容
     window.onload = function () {
         loadNews()
@@ -338,4 +338,4 @@
             e.target.nextElementSibling.style.animation = ""
         }
     }
-})();
+}

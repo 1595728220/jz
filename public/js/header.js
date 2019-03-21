@@ -1,4 +1,4 @@
-(() => {
+{
     //调用get函数获取头部文件代码
     get("../header.html", "text").then(function (html) {
         //将头部文件代码并加载到id为div的标签中
@@ -41,4 +41,4 @@
             erwei.children[0].style.height = ""
         }
     })
-})();
+}
