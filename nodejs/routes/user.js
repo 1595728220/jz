@@ -8,9 +8,11 @@ router.get("/login", (req, res) => {
     var Reg = /^\w{6,12}$/
     if (!Reg.test(uname)) {
         res.send({ code: -1, msg: "用户名格式错误" })
+        return
     }
     if (!Reg.test(upwd)) {
         res.send({ code: -2, msg: "密码格式错误" })
+        return
     }
     var sql = `select uid,uname from jz.user where uname = ? and upwd = ?`
     pool.query(sql, [uname, upwd], (err, result) => {
@@ -30,9 +32,11 @@ router.get("/register", (req, res) => {
     var Reg = /^\w{6,12}$/
     if (!Reg.test(uname)) {
         res.send({ code: -2, msg: "用户名格式错误" })
+        return
     }
     if (!Reg.test(upwd)) {
         res.send({ code: -3, msg: "密码格式错误" })
+        return
     }
     var sql = "select uid from jz.user where uname = ? "
     // console.log(uname)
