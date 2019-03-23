@@ -4,6 +4,11 @@ function get(url, dataType) {
         var res
         // 创建xhr
         var xhr = new XMLHttpRequest(); //标准创建
+		if(!dataType){
+			url = "http://www.urlip.cn:8080" +url
+		}else{
+			url = "http://www.urlip.cn" +url	
+		}
         // 创建请求
         xhr.open("get", url, true)
         xhr.withCredentials = true

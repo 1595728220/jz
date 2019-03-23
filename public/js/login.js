@@ -96,7 +96,7 @@
             var len = list.length;
             var data = {}
             var nameStr
-            var url = "http://127.0.0.1:8080/user/register?"
+            var url = "/user/register?"
             // 循环遍历数组，取出表单内的值
             for (var i = 0; i < len; i++) {
                 if (list[i].nodeName === "INPUT") {

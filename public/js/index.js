@@ -10,7 +10,7 @@
     //轮播图的整体函数
     function loadImgs() {
         //调用封装好的get函数请求数据,函数的返回值为promise对象，可以通过在then方法里写回调函数获得请求得到的数据
-        get("http://127.0.0.1:8080/load/banner")
+        get("/load/banner")
             //在then方法中写入带参的回调函数，并返回一个promise对象
             .then(function (data) {
                 // console.log(data)
@@ -162,7 +162,7 @@
     }
     //加载游戏列表
     function loadGame() {
-        get("http://127.0.0.1:8080/load/game")
+        get("/load/game")
             .then(function (res) {
                 return game(res)
             }).then(showGame)
@@ -261,7 +261,7 @@
     }
     // 加载新闻列表
     function loadNews() {
-        get("http://127.0.0.1:8080/load/news").then(function (res) {
+        get("/load/news").then(function (res) {
             return news(res)
         }).then(border)
     }
