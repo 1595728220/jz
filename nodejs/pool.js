@@ -2,11 +2,11 @@
 //多次require()不会创建多个
 const mysql  = require("mysql")
 let pool = mysql.createPool({
-    user:"root",
+    user:"jz",
     host:"127.0.0.1",
     port:3306,
     connectionLimit:15,
-    password:"",
+    password:"4NAmYcPdjGCsbxZR",
     database:"jz"
 })
 module.exports = pool;

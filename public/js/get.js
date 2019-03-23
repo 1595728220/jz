@@ -7,7 +7,7 @@ function get(url, dataType) {
 		if(!dataType){
 			url = "http://www.urlip.cn:8080" +url
 		}else{
-			url = "http://www.urlip.cn" +url	
+			url = "http://www.urlip.cn:5500" +url	
 		}
         // 创建请求
         xhr.open("get", url, true)
