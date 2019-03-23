@@ -5,9 +5,9 @@ function get(url, dataType) {
         // 创建xhr
         var xhr = new XMLHttpRequest(); //标准创建
 		if(!dataType){
-			url = "http://www.urlip.cn:8080" +url
+			url = "http://47.103.4.25:8080" +url
 		}else{
-			url = "http://www.urlip.cn:5500" +url	
+			url = "http://47.103.4.25:5500" +url	
 		}
         // 创建请求
         xhr.open("get", url, true)

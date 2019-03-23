@@ -5,11 +5,11 @@ const cors = require("cors")
 const loadRouter = require("./routes/load")
 const userRouter = require("./routes/user")
 let app = express()
-app.use(express.static("../public"))
+//app.use(express.static("../public"))
 app.use(cookieParser("12345"))
 app.use(cors({
-    origin: '*',    //控制响应头Access-Control-Allow-Origin
-    credentials: true, //控制响应头Access-Control-Allow-Credentials
+   origin: 'http://47.103.4.25:5500',    //控制响应头Access-Control-Allow-Origin
+   credentials: true, //控制响应头Access-Control-Allow-Credentials
     //这一项是为了跨域专门设置的
 }))
 app.use(session({
