@@ -1,11 +1,12 @@
 {
-    nologin()
+    // nologin()
     console.log("chongzhi.js文件已加载")
     //在页面加载完成后调用定义好的方法
     window.onload = function () {
         heightLight()
         zhichong()
-        smallLogin()
+        nologin()
+        // smallLogin()
     }
     //定义一个方法为导航条添加高亮显示效果
     function heightLight() {

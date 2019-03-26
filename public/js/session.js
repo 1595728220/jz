@@ -33,12 +33,15 @@ function nologin() {
             <span class="cp" id="toLogout" onclick="sessionLogout()")">退出登陆</span>
              `
         }
+        smallLogin()
     }
 }
 //定义一个登陆框模块,需要有一个id为loginForm的标签作为容器
 function smallLogin(){
-    show_login()
-    login()
+    // setTimeout(()=>{
+        show_login()
+        login()
+    // },200)
     //定义登陆的方法
     function login() {
         var button = document.getElementById("button")

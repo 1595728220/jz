@@ -157,6 +157,6 @@
     }
     //登陆成功后要执行的方法
     function successLogin(sign) {
-       if(sign) history.go(-1)
+       if(sign) location.href = "/person.html"
     }
 }

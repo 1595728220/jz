@@ -126,7 +126,8 @@
             // 获取小圆点的元素的数组
             var length = div.children.length
             //利用冒泡为小圆点添加点击事件
-            div.addEventListener("click", e => {
+            div.addEventListener("mouseover", e => {
+                console.log("鼠标移入")
                 //获取标签名为i的元素
                 if (e.target.nodeName === "I") {
                     //如果定时器在运行，停止定时器

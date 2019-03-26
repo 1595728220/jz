@@ -10,7 +10,7 @@
     overflow: hidden;
     /* background:rgba(238, 238, 238,0.9); */
     background:#bbb;
-    z-index:20;
+    z-index:120;
     transition-duration:.1s;
 }
 .nav .loginForm img{

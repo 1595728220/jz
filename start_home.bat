@@ -1,2 +1,2 @@
 @echo off
-start /min cmd /k "cd D:\xampp\htdocs\myProject\jz && supervisor app"
+start /min cmd /k "cd C:\xampp\htdocs\skb\myTest\jz\jz && supervisor app"
