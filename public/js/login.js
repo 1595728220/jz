@@ -85,6 +85,8 @@
             //展开注册框
             var register = document.getElementById("register")
             register.style.width = ""
+            var loginArea = document.getElementById("loginArea")
+            loginArea.style.width = "0"
         }
     }
     //设置点击提交注册信息
