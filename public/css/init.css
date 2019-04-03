@@ -1,7 +1,11 @@
 /* 基础样式 */
-body,ul,p,h1,h2,input{
+*{
     margin:0;
+    padding:0;
 }
+/* body,ul,p,h1,h2,input{
+    margin:0;
+} */
 body,a{
     color:#555;
 }
@@ -48,9 +52,11 @@ input:-webkit-autofill{
     box-shadow:0 0 0px 1000px #fff inset;
 }
 #header{
-    width:1200px;
+    /* width:1200px; */
     display: block;
     margin:auto;
+    height:41px;
+
 }
 .triangle-top{
     width:0;

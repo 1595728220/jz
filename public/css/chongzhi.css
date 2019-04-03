@@ -1,6 +1,8 @@
 
-.contain{
+.nav_contain{
     width:1200px;
+    height:69px;
+    margin:auto;
 }
 .nav{
     background:#FFB71C;
@@ -14,18 +16,19 @@
     color:#fff;
     font-size:17px;
 }
-.nav>span{
+.nav>.nav_contain>span{
     color:#fff;
     font-size:17px;
     height:100%;
     padding:0 24px;
 }
-.nav>span:first-child{
+.nav>.nav_contain>span:first-child{
     padding:0;
     margin-right:51px;
-    margin-left:80px;
+    /* margin-left:80px; */
     background:url("../asets/header-el.png") no-repeat 2px -4px;
     width:200px;
+    height:100%;
 }
 
 

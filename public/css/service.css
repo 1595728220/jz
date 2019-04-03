@@ -1,11 +1,16 @@
+#line{
+    height:10px;
+    width:100%;
+    background-position:0 -130px;
+}
 /* 导航条样式 */
 .nav{
     height:76px;
     border-bottom:3px solid #2A87D7;
 }
-.nav .bg{
+.navbg{
     background-image:url(../asets/header.png);
-    background-repeat:no-repeat;
+    background-repeat:repeat-x;
     display:block; 
 }
 .nav .title{
