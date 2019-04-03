@@ -44,5 +44,32 @@
   display:inline-block;
   width:54px;
 }
-
+.left .message .safetyItems .present{
+  display:block;
+  top:-6px;
+  left:62px;
+  width:118px;
+  height:7px;
+  background-position:0 -27px;
+}
+.left .message .safetyItemsList {
+  border:1px solid #ddd;
+  margin-top:9px;
+}
+.left .message .safetyItemsList p{
+  padding-left:79px;
+  width:608px;
+  height:83px;
+  font-size:18px;
+  line-height:83px;
+  margin:0 14px;
+}
+.left .message .safetyItemsList .pwdIcon{
+  background-position: 0px -34px;
+  display:inline-block;
+  width:48px;
+  height:48px;
+  left:29px;
+  top:19px;
+}
 
