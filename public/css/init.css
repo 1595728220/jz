@@ -1,11 +1,9 @@
 /* 基础样式 */
-*{
-    margin:0;
-    padding:0;
+
+body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, form, fieldset, legend, input, textarea, select, button, th, td {
+    margin: 0;
+    padding: 0;
 }
-/* body,ul,p,h1,h2,input{
-    margin:0;
-} */
 body,a{
     color:#555;
 }

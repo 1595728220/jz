@@ -1,5 +1,6 @@
 {
-    checkSession()    
-    window.onload = ()=>{
-    }
+    checkSession()
+    window.onload = function(){
+        nologin()
+    }    
 }

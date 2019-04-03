@@ -1,0 +1,21 @@
+#qiehuan {
+  color:#fff;
+}
+.nav{
+  background:#46cb6a;
+}
+.nav_contain{
+  width:1000px;
+  margin:auto;
+}
+.logo{
+  width:196px;
+  height:32px;
+  top:24px;
+  left:0;
+  background-position:0 -122px;
+}
+.bg{
+  background-image:url("../asets/person/el_header_sidbar.png");
+  background-repeat:no-repeat;
+}

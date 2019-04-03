@@ -40,15 +40,15 @@ function func_login(button,func,checkElement=null) {
             }
         })
     }
-    function checkF(name,check_value){
-        if (check_value) {
-            localStorage.setItem("uname", name)
-            localStorage.setItem("check", check_value)
-        } else {
-            localStorage.clear();
-            localStorage.setItem("check", check_value)
-            uname.value = null
-        }
+}
+function checkF(name,check_value){
+    if (check_value) {
+        localStorage.setItem("uname", name)
+        localStorage.setItem("check", check_value)
+    } else {
+        localStorage.clear();
+        localStorage.setItem("check", check_value)
+        uname.value = null
     }
 }
 
