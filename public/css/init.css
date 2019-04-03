@@ -86,3 +86,6 @@ input:-webkit-autofill{
 .tr{
     transition:all .5s linear 0s;
 }
+.ti{
+    text-indent:-9999px;
+}
