@@ -64,12 +64,29 @@
   line-height:83px;
   margin:0 14px;
 }
-.left .message .safetyItemsList .pwdIcon{
-  background-position: 0px -34px;
+.left .message .safetyItemsList .icon{
   display:inline-block;
   width:48px;
   height:48px;
+}
+.title{
+  display:inline-block;
+  width:125px;
+  margin:0 10px;
+}
+.left .message .safetyItemsList .pwdIcon{
+  background-position: 0px -34px;
   left:29px;
   top:19px;
+}
+.left .message .safetyItemsList .telIcon{
+  background-position: -97px -34px;
+  left:29px;
+  top:104px;
+}
+.left .message .safetyItemsList .mailIcon{
+  background-position: -49px -34px;
+  left:29px;
+  top:185px;
 }
 
