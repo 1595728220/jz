@@ -191,6 +191,7 @@
                 <div class="detail tr" data-div="detail">
                     <span>${res[i].gname}</span>
                     <hr>
+                    <video></video>
                 </div>
             </li>`
             }
