@@ -25,6 +25,7 @@
   background-repeat:no-repeat;
 }
 /* 左侧样式 */
+/* 账号信息 */
 .left{
   width:750px;
   height:840px;
@@ -74,6 +75,21 @@
   width:125px;
   margin:0 10px;
 }
+.left .message .safetyItemsList .info{
+  color:#8f8f8f;
+  width:300px;
+  margin-right:50px;
+  display:inline-block;
+  font-size:16px;
+}
+.left .message .safetyItemsList .modify{
+  margin-left:10px;
+  font-size:18px;
+  color:#00c535;
+}
+a:hover{
+  text-decoration:underline;
+}
 .left .message .safetyItemsList .pwdIcon{
   background-position: 0px -34px;
   left:29px;
@@ -89,4 +105,48 @@
   left:29px;
   top:185px;
 }
-
+.left .message .safetyItemsList .btn_bind{
+  display:inline-block;
+  width:97px;
+  height:34px;
+  color:#fff;
+  background:#ffa601;
+  border-radius:5px;
+  line-height:34px;
+  font-weight:700;
+  font-size:16px;
+  text-align:center;
+}
+.left .message .safetyItemsList .btn_bind:hover{
+  text-decoration:none;
+  opacity: 0.8;
+}
+/*旗下游戏*/
+.left .usGame {
+  margin-top:30px;
+} 
+.left .usGame h2{
+  margin-bottom:20px;
+}
+.left .usGame li{
+  margin-bottom:25px;
+  margin-right:25px;
+}
+.left .usGame img {
+  height:164px;
+  
+}
+.left .usGame span {
+  width:80px;
+  height:71px;
+}
+.left .usGame .myGame {
+  background-position:-80px -83px;
+  left:0;
+  top:0;
+}
+.left .usGame .recommend{
+  left:0;
+  top:0;
+  background-position:0px -83px;
+}
