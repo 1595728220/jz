@@ -7,6 +7,7 @@
 .nav_contain{
   width:1000px;
   margin:auto;
+  border-right:1px solid #bbb;
 }
 .logo{
   width:196px;
@@ -25,14 +26,21 @@
   background-repeat:no-repeat;
 }
 /* 左侧样式 */
+.left_area{
+  border-right:1px solid #bbb;
+  width:780px;
+  height:835px;
+}
 /* 账号信息 */
 .left{
-  width:750px;
+  width:742px;
   height:840px;
   font-size:18px;
   line-height:27px;
+  margin-right:10px;
 }
 .left .message{
+  width:717px;
   margin-top:31px;
   height:352px;
 }
@@ -54,7 +62,7 @@
   background-position:0 -27px;
 }
 .left .message .safetyItemsList {
-  border:1px solid #ddd;
+  border:1px solid #bbb;
   margin-top:9px;
 }
 .left .message .safetyItemsList p{
@@ -134,7 +142,7 @@ a:hover{
 }
 .left .usGame img {
   height:164px;
-  
+  width:222px;
 }
 .left .usGame span {
   width:80px;
@@ -149,4 +157,56 @@ a:hover{
   left:0;
   top:0;
   background-position:0px -83px;
+}
+/* 右侧样式 */
+.right{
+  width:218px;
+}
+.right .anquan{
+  margin-top:30px;
+}
+.right dt{
+  height:40px;
+  line-height:40px;
+  font-size:18px;
+  background:#ddd;
+  text-align:left;
+  padding-left:17px;
+}
+.right  dd {
+  height:50px;
+}
+.right dd a{
+  height:50px;
+  width:210px;
+  line-height:50px;
+  font-size:14px;
+  display:block;
+  margin:auto;
+  border-bottom:1px dotted #000;
+}
+.right dd .icon{
+  display:inline-block;
+  width:23px;
+  height:23px;
+  top:14px;
+  left:40px;
+}
+.right dd a span+span{
+  margin-left:75px;
+}
+.right dd .bindTel{
+  background-position:2px -37px;
+}
+.right dd .bindMail{
+  background-position:-23px -37px;
+}
+.right dd .manPwd{
+  background-position:-46px -37px;
+}
+.right dd .manChenmi{
+  background-position:-69px -37px;
+}
+.right dd .manPerson{
+  background-position:-92px -37px;
 }
