@@ -190,8 +190,16 @@
                 </a>
                 <div class="detail tr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pr" data-img="close">
-                    <video src="video/song_mv.mp4" controls></video>
-                </div>
+                    <video id="videoSource">
+                        <source src="video/song_mv.mp4" type="video/mp4">
+                    </video>
+                    <div id="durationbar">
+                        <progress id="positionBar" value="0" max="100"></progress>
+                    </div>
+                    <button id="start">开始</button>
+                    <button id="end">停止</button>
+                    <button id="pause">暂停</button>
+                    </div>
             </li>`
             }
             gameList.innerHTML = html
