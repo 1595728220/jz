@@ -195,11 +195,22 @@ header a:hover{
     top:10%;
     width:0px;
     height:0px;
-    background:#898989;
-    opacity: .9;
+    /* background:#898989; */
+    /* opacity: .9; */
     z-index:10;  
     overflow:hidden;
     /* transition:all .5s linear .1s; */
+}
+.games .detail img{
+    width:35px;
+    top:0px;
+    left:89.2%;
+    z-index:100;
+    background:rgba(50,50,50,.6)
+}
+.games .detail video{
+    height:100%;
+    margin:auto;
 }
 /* .games .detail b{
     background:#898989 url("../asets/games-bg.png") 1px 1px;

@@ -189,9 +189,8 @@
                     <i class="pa"></i>
                 </a>
                 <div class="detail tr" data-div="detail">
-                    <span>${res[i].gname}</span>
-                    <hr>
-                    <video></video>
+                    <img src="./asets/Cancel.png" class="pr" data-img="close">
+                    <video src="video/song_mv.mp4" controls></video>
                 </div>
             </li>`
             }
@@ -254,10 +253,12 @@
                 div.style.height = "600px"
             }
         })
-        games.addEventListener("mouseout", function (e) {
-            if (e.target.dataset.div === "detail") {
-                e.target.style.width = "0px"
-                e.target.style.height = "0px"
+        games.addEventListener("click", function (e) {
+            if (e.target.dataset.img === "close") {
+                console.log("关闭按钮被点击")
+                // console.log(e.target.parentElement)
+                e.target.parentElement.style.width = "0px"
+                e.target.parentElement.style.height = "0px"
             }
         })
     }
