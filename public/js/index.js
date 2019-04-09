@@ -191,15 +191,12 @@
                 </a>
                 <div class="detail tr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pa" data-img="close">
-                    <video id="videoSource">
+                    <video class="videoSource">
                         <source src="video/song_mv.mp4" type="video/mp4">
                     </video>
-                    <div id="durationbar">
-                        <progress id="positionBar" value="0" max="100"></progress>
-                    </div>
                     <div class="btns_video pa">
+                        <progress class="positionBar"></progress>
                         <button data-video="start">开始</button>
-                        <!-- <button data-video="end">停止</button>-->
                         <button data-video="pause">暂停</button>
                     </div>
                 </div>
@@ -211,12 +208,10 @@
     }
     //设置点击按钮滑动游戏列表
     function showGame() {
-        //获取Id为gameList的元素的子元素数组
-        var liList = gameList.children
-        //定义子元素的个数
-        var len = liList.length
         //描述最左侧元素的下标
         var count = 0
+        //定时器的标签
+        let timer
         // 设置鼠标移入时的效果
         gameList.addEventListener("mouseover", function (e) {
             //为gameList下的P元素添加鼠标移入事件
@@ -236,8 +231,10 @@
                     .children[1].style = "overflow: hidden;top:200px;height:0px"
             }
         })
-        //设置点击切换图片
+        //为id为games绑定单击事件
         games.addEventListener("click", function (e) {
+            e.preventDefault;
+            //设置点击切换图片
             if (e.target.nodeName === "I") {
                 if (e.target.dataset.page === "next") {
                     //向右按钮
@@ -251,13 +248,8 @@
                     if (count !== 0)
                         count--
                     gameList.style.marginLeft = -366 * count + "px"
-
                 }
             }
-        })
-        //为id为games绑定单击事件
-        games.addEventListener("click", function (e) {
-            e.preventDefault;
             //点击弹出视频框
             if (e.target.dataset.p === "back") {
                 var div = e.target.parentElement.parentElement.children[1]
@@ -272,21 +264,26 @@
                 e.target.parentElement.style.height = "0px"
                 //关闭视频框时暂停播放
                 e.target.parentElement.children[1].pause()
+                clearInterval(timer)
             }
             //点击播放视频
-            if(e.target.dataset.video === "start"){
+            if (e.target.dataset.video === "start") {
                 console.log("视频播放按钮被点击")
                 // console.log(videoSource)
-                let video = e.target.parentElement.parentElement.children[1]
-                video.play()
+                e.target.parentElement.parentElement.children[1].play()
+                timer = setInterval(function () {
+                    e.target.parentElement.children[0].max = e.target.parentElement.parentElement.children[1].duration
+                    e.target.parentElement.children[0].value = e.target.parentElement.parentElement.children[1].currentTime
+                }, 1000)
+                e.target.disable = false
             }
             //点击暂停视频
-            if(e.target.dataset.video === "pause") {
+            if (e.target.dataset.video === "pause") {
                 console.log("视频暂停按钮被点击")
-                let video = e.target.parentElement.parentElement.children[1]
-                video.pause()
+                e.target.parentElement.parentElement.children[1].pause()
+                clearInterval(timer)
             }
-            
+
         })
 
     }
