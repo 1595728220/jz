@@ -196,8 +196,8 @@
                     </video>
                     <div class="btns_video pa">
                         <progress class="positionBar"></progress>
-                        <button data-video="start">开始</button>
-                        <button data-video="pause">暂停</button>
+                        <button data-video="start" class="btn_start">开始</button>
+                        <button data-video="pause" class="btn_pause">暂停</button>
                     </div>
                 </div>
             </li>`
@@ -212,6 +212,8 @@
         var count = 0
         //定时器的标签
         let timer
+        //视频是否正在播放
+        let video_state = false
         // 设置鼠标移入时的效果
         gameList.addEventListener("mouseover", function (e) {
             //为gameList下的P元素添加鼠标移入事件
@@ -263,29 +265,56 @@
                 e.target.parentElement.style.width = "0px"
                 e.target.parentElement.style.height = "0px"
                 //关闭视频框时暂停播放
-                e.target.parentElement.children[1].pause()
+                // console.log(video_state)
+                video_state = false
+                e.target.nextElementSibling.pause()
                 clearInterval(timer)
             }
             //点击播放视频
             if (e.target.dataset.video === "start") {
                 console.log("视频播放按钮被点击")
-                // console.log(videoSource)
-                e.target.parentElement.parentElement.children[1].play()
-                timer = setInterval(function () {
-                    e.target.parentElement.children[0].max = e.target.parentElement.parentElement.children[1].duration
-                    e.target.parentElement.children[0].value = e.target.parentElement.parentElement.children[1].currentTime
-                }, 1000)
-                e.target.disable = false
+                video_switch(e.target)
+                e.target.style.display = "none"
             }
             //点击暂停视频
             if (e.target.dataset.video === "pause") {
                 console.log("视频暂停按钮被点击")
-                e.target.parentElement.parentElement.children[1].pause()
-                clearInterval(timer)
+                video_switch(e.target)
             }
 
         })
 
+        function video_switch(e) {
+            if (video_state) {
+                //更新此时的视频播放状态
+                video_state = false
+                console.log("视频停止" + video_state)
+                //暂停视频
+                e.parentElement.parentElement.children[1].pause()
+                //停止进度条定时器
+                clearInterval(timer)
+            } else {
+                //更新视频播放状态
+                video_state = true
+                //播放视频
+                e.parentElement.parentElement.children[1].play()
+                //设定定时器模拟进度条
+                timer = setInterval(function () {
+                    console.log("视频播放中" + video_state)
+                    //取出当前视频的播放参数
+                    let maxTime = e.parentElement.parentElement.children[1].duration
+                    let currentTime = e.parentElement.parentElement.children[1].currentTime
+                    //赋值播放参数以进度条的形式表现
+                    e.parentElement.children[0].max = maxTime
+                    e.parentElement.children[0].value = currentTime
+                    //当视频播放完全，清空定时器
+                    if (!(maxTime - currentTime)) {
+                        console.log("视频已播放完毕")
+                        clearInterval(timer)
+                    }
+                }, 1000)
+            }
+        }
     }
     // 加载新闻列表
     function loadNews() {
