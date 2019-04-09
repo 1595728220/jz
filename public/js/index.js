@@ -150,6 +150,7 @@
                 }
             })
         }
+
         function setClass(index) {
             var iList = document.getElementById("round").children
             for (var i = 0; i < iList.length; i++) {
@@ -189,17 +190,19 @@
                     <i class="pa"></i>
                 </a>
                 <div class="detail tr" data-div="detail">
-                    <img src="./asets/Cancel.png" class="pr" data-img="close">
+                    <img src="./asets/Cancel.png" class="pa" data-img="close">
                     <video id="videoSource">
                         <source src="video/song_mv.mp4" type="video/mp4">
                     </video>
                     <div id="durationbar">
                         <progress id="positionBar" value="0" max="100"></progress>
                     </div>
-                    <button id="start">开始</button>
-                    <button id="end">停止</button>
-                    <button id="pause">暂停</button>
+                    <div class="btns_video pa">
+                        <button data-video="start">开始</button>
+                        <!-- <button data-video="end">停止</button>-->
+                        <button data-video="pause">暂停</button>
                     </div>
+                </div>
             </li>`
             }
             gameList.innerHTML = html
@@ -252,23 +255,40 @@
                 }
             }
         })
-        //设置点击详情弹出窗口
+        //为id为games绑定单击事件
         games.addEventListener("click", function (e) {
             e.preventDefault;
+            //点击弹出视频框
             if (e.target.dataset.p === "back") {
                 var div = e.target.parentElement.parentElement.children[1]
-                div.style.width = "1200px"
+                div.style.width = "1067px"
                 div.style.height = "600px"
             }
-        })
-        games.addEventListener("click", function (e) {
+            //点击隐藏视频框
             if (e.target.dataset.img === "close") {
                 console.log("关闭按钮被点击")
                 // console.log(e.target.parentElement)
                 e.target.parentElement.style.width = "0px"
                 e.target.parentElement.style.height = "0px"
+                //关闭视频框时暂停播放
+                e.target.parentElement.children[1].pause()
             }
+            //点击播放视频
+            if(e.target.dataset.video === "start"){
+                console.log("视频播放按钮被点击")
+                // console.log(videoSource)
+                let video = e.target.parentElement.parentElement.children[1]
+                video.play()
+            }
+            //点击暂停视频
+            if(e.target.dataset.video === "pause") {
+                console.log("视频暂停按钮被点击")
+                let video = e.target.parentElement.parentElement.children[1]
+                video.pause()
+            }
+            
         })
+
     }
     // 加载新闻列表
     function loadNews() {
@@ -277,13 +297,13 @@
         }).then(border)
     }
     //加载新闻的方法
-    function news(res){
-        return new Promise(function(resolve,reject){
+    function news(res) {
+        return new Promise(function (resolve, reject) {
             var html = "<h2>+游戏资讯</h2>"
-        var length = res.length
-        var news = document.getElementById("news")
-        for (var i of res) {
-            html += `<div class="pr">
+            var length = res.length
+            var news = document.getElementById("news")
+            for (var i of res) {
+                html += `<div class="pr">
             <p class="pic fl pr">
                 <a href="${i.addr}" target="_blank"><img src="asets/${i.sm_img}"></a>
                 <b data-line="one" class="pa one tr"></b>
@@ -301,17 +321,17 @@
             <i class="lt pa"></i>
             <i class="rb pa"></i>
         </div>`
-        }
-        news.innerHTML = html
-        resolve(res)
+            }
+            news.innerHTML = html
+            resolve(res)
         })
     }
     //定义新闻图片鼠标悬停的边框效果
-    function border(){
+    function border() {
         var news = document.getElementById("news")
-        news.addEventListener("mouseover",function(e){
+        news.addEventListener("mouseover", function (e) {
             e.preventDefault
-            if(e.target.nodeName === "IMG"){
+            if (e.target.nodeName === "IMG") {
                 var list = e.target.parentElement.parentElement.children
                 var one = list[1]
                 var two = list[2]
@@ -323,9 +343,9 @@
                 two.style.height = "121px"
             }
         })
-        news.addEventListener("mouseout",function(e){
+        news.addEventListener("mouseout", function (e) {
             e.preventDefault
-            if(e.target.nodeName === "IMG"){
+            if (e.target.nodeName === "IMG") {
                 var list = e.target.parentElement.parentElement.children
                 var one = list[1]
                 var two = list[2]
@@ -339,13 +359,13 @@
         })
     }
     //添加电话摇晃效果
-    function shock(){
+    function shock() {
         var eventArea = document.getElementById("eventArea")
-        eventArea.onmouseenter = e=>{
+        eventArea.onmouseenter = e => {
             e.preventDefault
             e.target.nextElementSibling.style.animation = "turn 1.5s linear infinite"
         }
-        eventArea.onmouseleave = e=>{
+        eventArea.onmouseleave = e => {
             e.target.nextElementSibling.style.animation = ""
         }
     }

@@ -204,7 +204,7 @@ header a:hover{
 .games .detail img{
     width:35px;
     top:0px;
-    left:89.2%;
+    right:0px;
     z-index:100;
     background:rgba(50,50,50,.6)
 }
@@ -217,6 +217,10 @@ header a:hover{
     width:24px;
     height:24px;
 } */
+.games .detail .btns_video{
+    bottom:0px;
+    left:50%;
+}
 .games .detail span{
     display:block;
     color:#3f3;
