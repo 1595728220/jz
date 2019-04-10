@@ -199,6 +199,7 @@
                         <button data-video="start" class="btn_start pa"></button>
                         <span class="currentTime pa">00:00:00</span>
                         <span class="totalTime pa">00:00:00</span>
+                        <span class="audio_close pa" data-btn="audio"></span>
                     </div>
                 </div>
             </li>`
@@ -215,6 +216,8 @@
         let timer
         //视频是否正在播放
         let video_state = false
+        //音量大小
+        let audio_value = 0
         // 设置鼠标移入时的效果
         gameList.addEventListener("mouseover", function (e) {
             //为gameList下的P元素添加鼠标移入事件
@@ -275,6 +278,20 @@
                 console.log("视频播放按钮被点击")
                 video_switch(e)
             }
+            //点击静音
+            if(e.target.dataset.btn === "audio"){
+                if(audio_value == 2) {
+                    audio_value = 0
+                    e.target.className = "audio_close pa"
+                } else if(audio_value === 1){
+                    audio_value ++
+                    e.target.className = "audio_high pa"
+                } else {
+                    audio_value ++
+                    e.target.className = "audio_low pa"
+                }
+                e.target.parentElement.parentElement.children[1].volume=audio_value/3            
+            }
         })
         for (var i = 0, //获得视频的父元素
                 video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
@@ -334,27 +351,27 @@
         }
     }
     //转换秒数为时间数
-    function changeTime(time){
+    function changeTime(time) {
         let str = "",
-        s,
-        min,
-        h
+            s,
+            min,
+            h
         time = parseInt(time)
-        s = time%60
-        time = (time - s)/60
+        s = time % 60
+        time = (time - s) / 60
         min = time % 60
-        time = (time - min)/60
+        time = (time - min) / 60
         h = time
-        if(h < 10) {
-            h = "0"+h 
+        if (h < 10) {
+            h = "0" + h
         }
-        if(min < 10){
+        if (min < 10) {
             min = "0" + min
         }
-        if(s < 10) {
+        if (s < 10) {
             s = "0" + s
         }
-        return h+":"+min+":"+s
+        return h + ":" + min + ":" + s
     }
     // 加载新闻列表
     function loadNews() {

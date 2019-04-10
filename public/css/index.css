@@ -234,6 +234,19 @@ header a:hover{
     left:100px;
     bottom:22px;
 }
+.games .detail .btns_video .audio_close,.games .detail .btns_video .audio_low,.games .detail .btns_video .audio_high{
+    width:32px;
+    height:32px;
+    top:9px;
+    right:66px;
+    background:url("../asets/audio/close.png") no-repeat;
+}
+.games .detail .btns_video .audio_low{
+    background-image:url("../asets/audio/low.png");
+}
+.games .detail .btns_video .audio_high{
+    background-image:url("../asets/audio/high.png");
+}
 /* chrome浏览器中设置进度条颜色 */
 ::-webkit-progress-bar{
     background:#999;
