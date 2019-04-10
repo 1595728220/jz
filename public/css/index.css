@@ -212,14 +212,25 @@ header a:hover{
     height:100%;
     margin:auto;
 }
-/* .games .detail b{
-    background:#898989 url("../asets/games-bg.png") 1px 1px;
-    width:24px;
-    height:24px;
-} */
-.games .detail .btns_video{
-    bottom:0px;
-    left:50%;
+.games .detail .btns_video .positionBar{
+    width:800px;
+    left:133px;
+    bottom:20px;
+}
+.games .detail .btns_video .btn_start,.games .detail .btns_video .btn_pause{
+    width: 100px;
+    height:100px;
+    left:490px;
+    top:235px;
+    border:0;
+    outline:0;
+    border-radius:50%;
+    background: url("../asets/btn/start.png") no-repeat;
+    background-size:100px 100px;
+    opacity: .8;
+}
+.games .detail .btns_video .btn_pause{
+    background-image:url("../asets/btn/pause.png");
 }
 .games .detail span{
     display:block;

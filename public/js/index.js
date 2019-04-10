@@ -189,15 +189,14 @@
                     <p class="back pa" style="overflow: hidden;top:200px;height:0px" data-p="back"></p>
                     <i class="pa"></i>
                 </a>
-                <div class="detail tr" data-div="detail">
+                <div class="detail tr pr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pa" data-img="close">
-                    <video class="videoSource">
+                    <video class="videoSource" data-video="area">
                         <source src="video/song_mv.mp4" type="video/mp4">
                     </video>
-                    <div class="btns_video pa">
-                        <progress class="positionBar"></progress>
-                        <button data-video="start" class="btn_start">开始</button>
-                        <button data-video="pause" class="btn_pause">暂停</button>
+                    <div class="btns_video">
+                        <progress class="positionBar pa"></progress>
+                        <button data-video="start" class="btn_start pa"></button>
                     </div>
                 </div>
             </li>`
@@ -270,20 +269,32 @@
                 e.target.nextElementSibling.pause()
                 clearInterval(timer)
             }
-            //点击播放视频
+            //点击播放/暂停视频
             if (e.target.dataset.video === "start") {
                 console.log("视频播放按钮被点击")
                 video_switch(e.target)
-                e.target.style.display = "none"
             }
-            //点击暂停视频
-            if (e.target.dataset.video === "pause") {
-                console.log("视频暂停按钮被点击")
-                video_switch(e.target)
-            }
-
         })
-
+        for (var i = 0, //获得视频的父元素
+                video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
+            // 为视频的父元素绑定事件监听
+            video_father[i].addEventListener("mouseenter", e => {
+                e.preventDefault
+                // console.log(e.target)
+                // if (e.target.dataset.video === "area") {
+                console.log("鼠标移入视频框")
+                e.target.children[2].children[1].style.display = "block"
+                // }
+            })
+            video_father[i].addEventListener("mouseleave", e => {
+                e.preventDefault
+                // if (e.target.dataset.video === "area") {
+                console.log("鼠标移出视频框")
+                e.target.children[2].children[1].style.display = "none"
+                // }
+            })
+        }
+        //视频的播放和暂停方法
         function video_switch(e) {
             if (video_state) {
                 //更新此时的视频播放状态
@@ -291,6 +302,8 @@
                 console.log("视频停止" + video_state)
                 //暂停视频
                 e.parentElement.parentElement.children[1].pause()
+                //隐藏或显示按钮
+                e.parentElement.children[1].className = "btn_start pa"
                 //停止进度条定时器
                 clearInterval(timer)
             } else {
@@ -298,6 +311,8 @@
                 video_state = true
                 //播放视频
                 e.parentElement.parentElement.children[1].play()
+                //隐藏或显示按钮
+                e.parentElement.children[1].className = "btn_pause pa"
                 //设定定时器模拟进度条
                 timer = setInterval(function () {
                     console.log("视频播放中" + video_state)
