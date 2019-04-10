@@ -194,9 +194,11 @@
                     <video class="videoSource" data-video="area">
                         <source src="video/song_mv.mp4" type="video/mp4">
                     </video>
-                    <div class="btns_video">
+                    <div class="btns_video pa">
                         <progress class="positionBar pa"></progress>
                         <button data-video="start" class="btn_start pa"></button>
+                        <span class="currentTime pa">00:00:00</span>
+                        <span class="totalTime pa">00:00:00</span>
                     </div>
                 </div>
             </li>`
@@ -260,19 +262,18 @@
             //点击隐藏视频框
             if (e.target.dataset.img === "close") {
                 console.log("关闭按钮被点击")
-                // console.log(e.target.parentElement)
                 e.target.parentElement.style.width = "0px"
                 e.target.parentElement.style.height = "0px"
                 //关闭视频框时暂停播放
-                // console.log(video_state)
                 video_state = false
                 e.target.nextElementSibling.pause()
                 clearInterval(timer)
+                e.target.parentElement.children[2].children[1].className = "btn_start pa"
             }
             //点击播放/暂停视频
             if (e.target.dataset.video === "start") {
                 console.log("视频播放按钮被点击")
-                video_switch(e.target)
+                video_switch(e)
             }
         })
         for (var i = 0, //获得视频的父元素
@@ -280,18 +281,16 @@
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
                 e.preventDefault
-                // console.log(e.target)
-                // if (e.target.dataset.video === "area") {
                 console.log("鼠标移入视频框")
-                e.target.children[2].children[1].style.display = "block"
-                // }
+                e.target.children[2]
+                    .style.display = "block"
             })
             video_father[i].addEventListener("mouseleave", e => {
                 e.preventDefault
-                // if (e.target.dataset.video === "area") {
                 console.log("鼠标移出视频框")
-                e.target.children[2].children[1].style.display = "none"
-                // }
+                e.target.children[2]
+                    .style.display = "none"
+
             })
         }
         //视频的播放和暂停方法
@@ -301,27 +300,30 @@
                 video_state = false
                 console.log("视频停止" + video_state)
                 //暂停视频
-                e.parentElement.parentElement.children[1].pause()
+                e.target.parentElement.parentElement.children[1].pause()
                 //隐藏或显示按钮
-                e.parentElement.children[1].className = "btn_start pa"
+                e.target.parentElement.children[1].className = "btn_start pa"
                 //停止进度条定时器
                 clearInterval(timer)
             } else {
                 //更新视频播放状态
                 video_state = true
                 //播放视频
-                e.parentElement.parentElement.children[1].play()
+                e.target.parentElement.parentElement.children[1].play()
                 //隐藏或显示按钮
-                e.parentElement.children[1].className = "btn_pause pa"
+                e.target.parentElement.children[1].className = "btn_pause pa"
                 //设定定时器模拟进度条
                 timer = setInterval(function () {
                     console.log("视频播放中" + video_state)
                     //取出当前视频的播放参数
-                    let maxTime = e.parentElement.parentElement.children[1].duration
-                    let currentTime = e.parentElement.parentElement.children[1].currentTime
+                    let maxTime = e.target.parentElement.parentElement.children[1].duration
+                    let currentTime = e.target.parentElement.parentElement.children[1].currentTime
                     //赋值播放参数以进度条的形式表现
-                    e.parentElement.children[0].max = maxTime
-                    e.parentElement.children[0].value = currentTime
+                    e.target.parentElement.children[0].max = maxTime
+                    e.target.parentElement.children[0].value = currentTime
+                    //更改控制条时间显示  
+                    e.target.parentElement.children[2].innerHTML = changeTime(currentTime)
+                    e.target.parentElement.children[3].innerHTML = changeTime(maxTime)
                     //当视频播放完全，清空定时器
                     if (!(maxTime - currentTime)) {
                         console.log("视频已播放完毕")
@@ -330,6 +332,29 @@
                 }, 1000)
             }
         }
+    }
+    //转换秒数为时间数
+    function changeTime(time){
+        let str = "",
+        s,
+        min,
+        h
+        time = parseInt(time)
+        s = time%60
+        time = (time - s)/60
+        min = time % 60
+        time = (time - min)/60
+        h = time
+        if(h < 10) {
+            h = "0"+h 
+        }
+        if(min < 10){
+            min = "0" + min
+        }
+        if(s < 10) {
+            s = "0" + s
+        }
+        return h+":"+min+":"+s
     }
     // 加载新闻列表
     function loadNews() {
