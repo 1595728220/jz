@@ -195,11 +195,20 @@
                         <source src="video/song_mv.mp4" type="video/mp4">
                     </video>
                     <div class="btns_video pa">
-                        <progress class="positionBar pa"></progress>
+                        <progress class="positionBar pa" data-btn="progress"></progress>
                         <button data-video="start" class="btn_start pa"></button>
                         <span class="currentTime pa">00:00:00</span>
                         <span class="totalTime pa">00:00:00</span>
                         <span class="audio_close pa" data-btn="audio"></span>
+                        <span class="audio_control pa" data-btn="control"></span>
+                        <div class="audio_control_bar pa">
+                            <span class="control_bar" data-audio="10"></span>
+                            <span class="control_bar" data-audio="20"></span>
+                            <span class="control_bar" data-audio="40"></span>
+                            <span class="control_bar" data-audio="60"></span>
+                            <span class="control_bar" data-audio="80"></span>
+                            <span class="control_bar" data-audio="100"></span>
+                        </div>
                     </div>
                 </div>
             </li>`
@@ -290,7 +299,18 @@
                     audio_value ++
                     e.target.className = "audio_low pa"
                 }
-                e.target.parentElement.parentElement.children[1].volume=audio_value/3            
+                e.target.parentElement.parentElement.children[1].volume=audio_value/3 
+                // console.log(e.target.parentElement.parentElement.children[1].volume)           
+            }
+            if(e.target.dataset.btn === "progress") {
+                console.log(e.offsetX)
+                console.log(e.target.offsetWidth)
+                let video = e.target.parentElement.parentElement.children[1]
+                let maxTime = video.duration
+                let nowTime = maxTime*e.offsetX/e.target.offsetWidth
+                video.currentTime= nowTime
+                video_state = false
+                video_switch(e)
             }
         })
         for (var i = 0, //获得视频的父元素
@@ -307,7 +327,6 @@
                 console.log("鼠标移出视频框")
                 e.target.children[2]
                     .style.display = "none"
-
             })
         }
         //视频的播放和暂停方法
@@ -344,6 +363,8 @@
                     //当视频播放完全，清空定时器
                     if (!(maxTime - currentTime)) {
                         console.log("视频已播放完毕")
+                        video_state = false
+                        e.target.parentElement.children[1].className = "btn_start pa"
                         clearInterval(timer)
                     }
                 }, 1000)
