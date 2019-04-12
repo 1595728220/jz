@@ -262,6 +262,12 @@ header a:hover{
     background:rgba(0,0,0,.3);
     display:none;
 }
+.games .detail .btns_video .audio_control_bar .control_bar {
+    width:10px;
+    height:2px;
+    background:#fff;
+    
+}
 /* chrome浏览器中设置进度条颜色 */
 ::-webkit-progress-bar{
     background:#999;

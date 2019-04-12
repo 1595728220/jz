@@ -199,9 +199,9 @@
                         <button data-video="start" class="btn_start pa"></button>
                         <span class="currentTime pa">00:00:00</span>
                         <span class="totalTime pa">00:00:00</span>
-                        <span class="audio_close pa" data-btn="audio"></span>
+                        <span class="audio_low pa" data-btn="audio"></span>
                         <span class="audio_control pa" data-btn="control"></span>
-                        <div class="audio_control_bar pa">
+                        <div class="audio_control_bar pa" data-audio="area">
                             <span class="control_bar" data-audio="10"></span>
                             <span class="control_bar" data-audio="20"></span>
                             <span class="control_bar" data-audio="40"></span>
@@ -226,7 +226,7 @@
         //视频是否正在播放
         let video_state = false
         //音量大小
-        let audio_value = 0
+        let audio_value = 1
         // 设置鼠标移入时的效果
         gameList.addEventListener("mouseover", function (e) {
             //为gameList下的P元素添加鼠标移入事件
@@ -288,33 +288,40 @@
                 video_switch(e)
             }
             //点击静音
-            if(e.target.dataset.btn === "audio"){
-                if(audio_value == 2) {
+            if (e.target.dataset.btn === "audio") {
+                if (audio_value == 2) {
                     audio_value = 0
                     e.target.className = "audio_close pa"
-                } else if(audio_value === 1){
-                    audio_value ++
+                } else if (audio_value === 1) {
+                    audio_value++
                     e.target.className = "audio_high pa"
                 } else {
-                    audio_value ++
+                    audio_value++
                     e.target.className = "audio_low pa"
                 }
-                e.target.parentElement.parentElement.children[1].volume=audio_value/3 
+                e.target.parentElement.parentElement.children[1].volume = audio_value / 3
                 // console.log(e.target.parentElement.parentElement.children[1].volume)           
             }
-            if(e.target.dataset.btn === "progress") {
+            //点击进度条调整视频当前播放时间
+            if (e.target.dataset.btn === "progress") {
                 console.log(e.offsetX)
                 console.log(e.target.offsetWidth)
+                //获取当前视频元素
                 let video = e.target.parentElement.parentElement.children[1]
+                //获取视频总时间
                 let maxTime = video.duration
-                let nowTime = maxTime*e.offsetX/e.target.offsetWidth
-                video.currentTime= nowTime
+                //获取点击进度条对应的时间
+                let nowTime = maxTime * e.offsetX / e.target.offsetWidth
+                //改变视频的当前时间
+                video.currentTime = nowTime
                 video_state = false
                 video_switch(e)
             }
+            //点击调整音量图标弹出音量控制条
+            if(e.target.dataset.)
         })
         for (var i = 0, //获得视频的父元素
-                video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
+            video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
                 e.preventDefault
