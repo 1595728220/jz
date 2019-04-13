@@ -202,13 +202,17 @@
                         <span class="audio_low pa" data-btn="audio"></span>
                         <span class="audio_control pa" data-btn="control"></span>
                         <div class="audio_control_bar pa" data-audio="area">
-                            <span class="control_bar" data-audio="10"></span>
-                            <span class="control_bar" data-audio="20"></span>
-                            <span class="control_bar" data-audio="40"></span>
-                            <span class="control_bar" data-audio="60"></span>
-                            <span class="control_bar" data-audio="80"></span>
                             <span class="control_bar" data-audio="100"></span>
-                        </div>
+                            <span class="control_bar" data-audio="90"></span>
+                            <span class="control_bar" data-audio="80"></span>
+                            <span class="control_bar" data-audio="70"></span>
+                            <span class="control_bar" data-audio="60"></span>
+                            <span class="control_bar" data-audio="50"></span>
+                            <span class="control_bar" data-audio="40"></span>
+                            <span class="control_bar" data-audio="30"></span>
+                            <span class="control_bar" data-audio="20"></span>
+                            <span class="control_bar" data-audio="10"></span>
+                            </div>
                     </div>
                 </div>
             </li>`
@@ -220,13 +224,16 @@
     //设置点击按钮滑动游戏列表
     function showGame() {
         //描述最左侧元素的下标
-        var count = 0
+        let count = 0,
         //定时器的标签
-        let timer
+        timer,
         //视频是否正在播放
-        let video_state = false
-        //音量大小
-        let audio_value = 1
+        video_state = false,
+            //音量大小
+            audio_value = 1,
+            //音量条区域的显示状态
+            audio_area_state = 0
+
         // 设置鼠标移入时的效果
         gameList.addEventListener("mouseover", function (e) {
             //为gameList下的P元素添加鼠标移入事件
@@ -318,10 +325,19 @@
                 video_switch(e)
             }
             //点击调整音量图标弹出音量控制条
-            if(e.target.dataset.)
+            if (e.target.dataset.btn === "control") {
+                // console.log(audio_area_state)
+                if (!audio_area_state) {
+                    audio_area_state = 1
+                    e.target.parentElement.children[6].style.display = "block"
+                } else {
+                    audio_area_state = 0
+                    e.target.parentElement.children[6].style.display = ""
+                }
+            }
         })
         for (var i = 0, //获得视频的父元素
-            video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
+                video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
                 e.preventDefault

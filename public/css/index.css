@@ -263,10 +263,39 @@ header a:hover{
     display:none;
 }
 .games .detail .btns_video .audio_control_bar .control_bar {
-    width:10px;
-    height:2px;
+    display:block;
+    width:40px;
+    height:5px;
+    border:1px solid #eee;
     background:#fff;
-    
+    margin:8px auto;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(2){
+    width:36px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(3){
+    width:32px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(4){
+    width:28px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(5){
+    width:24px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(6){
+    width:20px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(7){
+    width:16px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(8){
+    width:12px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(9){
+    width:8px;
+}
+.games .detail .btns_video .audio_control_bar span:nth-child(10){
+    width:4px;
 }
 /* chrome浏览器中设置进度条颜色 */
 ::-webkit-progress-bar{
