@@ -14,7 +14,7 @@
 }
 #qiehuan{
     color:#fff;
-    font-size:17px;
+    /* font-size:17px; */
 }
 .nav>.nav_contain>span{
     color:#fff;
@@ -66,9 +66,12 @@
     width:1200px;
 }
 h2{
+    width:100px;
+    text-align:center;
     color:#222;
     margin:20px 0 10px;
     font-size:25px;
+    border-bottom:3px solid #000;
 }
 .range{
     width:980px;
@@ -89,7 +92,8 @@ h2{
 .game .zhichong-area{
     width:480px;
     height:257px;
-    overflow:hidden;    
+    overflow:hidden;  
+    box-shadow:0 0 10px 2px #666;  
 }
 .game .placehold{
     background:transparent;
