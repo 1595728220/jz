@@ -202,16 +202,16 @@
                         <span class="audio_low pa" data-btn="audio"></span>
                         <span class="audio_control pa" data-btn="control"></span>
                         <div class="audio_control_bar pa" data-audio="area">
-                            <span class="control_bar" data-audio="100"></span>
-                            <span class="control_bar" data-audio="90"></span>
-                            <span class="control_bar" data-audio="80"></span>
-                            <span class="control_bar" data-audio="70"></span>
-                            <span class="control_bar" data-audio="60"></span>
-                            <span class="control_bar" data-audio="50"></span>
-                            <span class="control_bar" data-audio="40"></span>
-                            <span class="control_bar" data-audio="30"></span>
-                            <span class="control_bar" data-audio="20"></span>
-                            <span class="control_bar" data-audio="10"></span>
+                            <span class="control_bar" data-audio="100" data-bar="control"></span>
+                            <span class="control_bar" data-audio="90" data-bar="control"></span>
+                            <span class="control_bar" data-audio="80" data-bar="control"></span>
+                            <span class="control_bar" data-audio="70" data-bar="control"></span>
+                            <span class="control_bar" data-audio="60" data-bar="control"></span>
+                            <span class="control_bar" data-audio="50" data-bar="control"></span>
+                            <span class="control_bar" data-audio="40" data-bar="control"></span>
+                            <span class="control_bar" data-audio="30" data-bar="control"></span>
+                            <span class="control_bar" data-audio="20" data-bar="control"></span>
+                            <span class="control_bar" data-audio="10" data-bar="control"></span>
                             </div>
                     </div>
                 </div>
@@ -336,6 +336,10 @@
                     e.target.parentElement.children[6].style.height = ""
                     e.target.parentElement.children[6].style.top = ""
                 }
+            }
+            if(e.target.dataset.bar === "control"){
+                console.log(e.target.parentElement.parentElement.parentElement.children[1].volume)
+                e.target.parentElement.parentElement.parentElement.children[1].volume = e.target.dataset.audio/100
             }
         })
         for (var i = 0, //获得视频的父元素
