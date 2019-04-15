@@ -1,10 +1,15 @@
 /* 设置背景大图 */
 .bg{
-    background: #eee url(../asets/bg1.jpg) no-repeat  250px 0px;
+    background: #eee url(../asets/bg1.jpg) no-repeat  0px 0px;
     height:571px;
-    width:1500px;
-    padding:63px 370px;
+    width:988px;
+    /* padding:63px 370px; */
     box-sizing: border-box;
+    margin:30px auto 50px ;
+}
+.bg>.login{
+    width:800px;
+    margin:50px auto;
 }
 /* 左侧样式 */
 .bg>.login>.left{
