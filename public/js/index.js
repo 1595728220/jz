@@ -329,10 +329,12 @@
                 // console.log(audio_area_state)
                 if (!audio_area_state) {
                     audio_area_state = 1
-                    e.target.parentElement.children[6].style.display = "block"
+                    e.target.parentElement.children[6].style.height = "135px"
+                    e.target.parentElement.children[6].style.top = "-135px"
                 } else {
                     audio_area_state = 0
-                    e.target.parentElement.children[6].style.display = ""
+                    e.target.parentElement.children[6].style.height = ""
+                    e.target.parentElement.children[6].style.top = ""
                 }
             }
         })

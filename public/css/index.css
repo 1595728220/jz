@@ -188,6 +188,7 @@ header a:hover{
 }
 .games .back{
     background-position: 0 -200px;     
+    transition:all .4s linear;
 }
 .games .detail{
     position: fixed;
@@ -256,16 +257,20 @@ header a:hover{
 }
 .games .detail .btns_video .audio_control_bar{
     width:53px;
-    height:100px;
-    top:-98px;
+    /* height:135px; */
+    height:0;
+    /* top:-135px; */
+    top:0;
     right:33px;
     background:rgba(0,0,0,.3);
-    display:none;
+    /* display:none; */
+    transition:all .3s linear;
+    overflow: hidden;
 }
 .games .detail .btns_video .audio_control_bar .control_bar {
     display:block;
     width:40px;
-    height:5px;
+    height:3px;
     border:1px solid #eee;
     background:#fff;
     margin:8px auto;
