@@ -201,18 +201,7 @@
                         <span class="totalTime pa">00:00:00</span>
                         <span class="audio_low pa" data-btn="audio"></span>
                         <span class="audio_control pa" data-btn="control"></span>
-                        <div class="audio_control_bar pa" data-audio="area">
-                            <span class="control_bar" data-audio="100" data-bar="control"></span>
-                            <span class="control_bar" data-audio="90" data-bar="control"></span>
-                            <span class="control_bar" data-audio="80" data-bar="control"></span>
-                            <span class="control_bar" data-audio="70" data-bar="control"></span>
-                            <span class="control_bar" data-audio="60" data-bar="control"></span>
-                            <span class="control_bar" data-audio="50" data-bar="control"></span>
-                            <span class="control_bar" data-audio="40" data-bar="control"></span>
-                            <span class="control_bar" data-audio="30" data-bar="control"></span>
-                            <span class="control_bar" data-audio="20" data-bar="control"></span>
-                            <span class="control_bar" data-audio="10" data-bar="control"></span>
-                            </div>
+                        <span class="full_screen pa" data-btn="full"></span>
                     </div>
                 </div>
             </li>`
@@ -324,23 +313,6 @@
                 video_state = false
                 video_switch(e)
             }
-            //点击调整音量图标弹出音量控制条
-            if (e.target.dataset.btn === "control") {
-                // console.log(audio_area_state)
-                if (!audio_area_state) {
-                    audio_area_state = 1
-                    e.target.parentElement.children[6].style.height = "135px"
-                    e.target.parentElement.children[6].style.top = "-135px"
-                } else {
-                    audio_area_state = 0
-                    e.target.parentElement.children[6].style.height = ""
-                    e.target.parentElement.children[6].style.top = ""
-                }
-            }
-            if(e.target.dataset.bar === "control"){
-                console.log(e.target.parentElement.parentElement.parentElement.children[1].volume)
-                e.target.parentElement.parentElement.parentElement.children[1].volume = e.target.dataset.audio/100
-            }
         })
         for (var i = 0, //获得视频的父元素
                 video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
@@ -397,6 +369,19 @@
                         clearInterval(timer)
                     }
                 }, 1000)
+            }
+        }
+        //视频音量的调整
+        function audio_change(e){
+            if (audio_value == 2) {
+                audio_value = 0
+                e.target.className = "audio_close pa"
+            } else if (audio_value === 1) {
+                audio_value++
+                e.target.className = "audio_high pa"
+            } else {
+                audio_value++
+                e.target.className = "audio_low pa"
             }
         }
     }

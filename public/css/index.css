@@ -239,68 +239,15 @@ header a:hover{
     width:32px;
     height:32px;
     top:9px;
-    right:72px;
+    right:65px;
     background:url("../asets/audio/close.png") no-repeat;
 }
+
 .games .detail .btns_video .audio_low{
     background-image:url("../asets/audio/low.png");
 }
 .games .detail .btns_video .audio_high{
     background-image:url("../asets/audio/high.png");
-}
-.games .detail .btns_video .audio_control{
-    width:32px;
-    height:32px;
-    top:9px;
-    right:40px;
-    background:url("../asets/audio/control.png") no-repeat;
-}
-.games .detail .btns_video .audio_control_bar{
-    width:53px;
-    /* height:135px; */
-    height:0;
-    /* top:-135px; */
-    top:0;
-    right:33px;
-    background:rgba(0,0,0,.3);
-    /* display:none; */
-    transition:all .3s linear;
-    overflow: hidden;
-}
-.games .detail .btns_video .audio_control_bar .control_bar {
-    display:block;
-    width:40px;
-    height:3px;
-    border:1px solid #eee;
-    background:#fff;
-    margin:8px auto;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(2){
-    width:36px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(3){
-    width:32px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(4){
-    width:28px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(5){
-    width:24px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(6){
-    width:20px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(7){
-    width:16px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(8){
-    width:12px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(9){
-    width:8px;
-}
-.games .detail .btns_video .audio_control_bar span:nth-child(10){
-    width:4px;
 }
 /* chrome浏览器中设置进度条颜色 */
 ::-webkit-progress-bar{
@@ -324,6 +271,17 @@ header a:hover{
 }
 .games .detail .btns_video .btn_pause{
     background-image:url("../asets/btn/pause.png");
+}
+.games .detail .btns_video .btn_start:hover,.games .detail .btns_video .btn_pause:hover{
+    background-color:rgba(0,0,0,1);
+}
+.games .detail .btns_video .full_screen{
+    width:25px;
+    height:25px;
+    background:url("../asets/btn/full.png") no-repeat;
+    background-size:25px 25px;
+    top:13px;
+    right:32px;
 }
 .games .dy p{
     background-image:url(../asets/games-dy.jpg)    
