@@ -313,6 +313,20 @@
                 video_state = false
                 video_switch(e)
             }
+            //点击全屏
+            if(e.target.dataset.btn === "full") {
+                let playVideo = e.target.parentElement.parentElement
+                playVideo.style.left="0";
+                playVideo.style.top = "0";
+                playVideo.style.height = window.screen.availHeight+"px"
+                playVideo.style.width =  window.screen.availWidth+"px"
+                playVideo.children[1].style.width = window.screen.availWidth+"px"
+                playVideo.children[1].style.height = window.screen.availHeight+"px"
+                // playVideo.style.width = document.body.scrollWidth +"px";
+                // playVideo.style.height = document.body.scrollHeight+"px";
+                // playVideo.children[1].style.width = document.body.scrollWidth +"px";
+                // playVideo.children[1].style.height = document.body.scrollHeight+"px";
+            }
         })
         for (var i = 0, //获得视频的父元素
                 video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
@@ -371,19 +385,8 @@
                 }, 1000)
             }
         }
-        //视频音量的调整
-        function audio_change(e){
-            if (audio_value == 2) {
-                audio_value = 0
-                e.target.className = "audio_close pa"
-            } else if (audio_value === 1) {
-                audio_value++
-                e.target.className = "audio_high pa"
-            } else {
-                audio_value++
-                e.target.className = "audio_low pa"
-            }
-        }
+        
+
     }
     //转换秒数为时间数
     function changeTime(time) {
