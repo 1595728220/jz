@@ -105,14 +105,14 @@
                     nameStr = list[i].name.toString()
                     //检查表单内数据是否为空，为空重新注册
                     if (list[i].value === "") {
-                        alert("请完善注册信息")
+                        my_alert("请完善注册信息")
                         return
                     }
                     data[nameStr] = list[i].value
                     //检查两次密码输入是否一致，不一致提示并清空再次输入密码
                     if (nameStr === "repet") {
                         if (data.upwd !== data.repet) {
-                            alert("两次密码输入不一致，请重新输入")
+                            my_alert("两次密码输入不一致，请重新输入")
                             list[i].value = ""
                             return
                         }
@@ -134,9 +134,9 @@
                     var register = document.getElementById("register")
                     register.style.width = "0"
                     loginArea.style.width = ""
-                    alert(res.msg)
+                    my_alert(res.msg)
                 } else {
-                    alert(res.msg + "，请重新填写注册信息")
+                    my_alert(res.msg + "，请重新填写注册信息")
                 }
                 for (var i = 0; i < len; i++) {
                     if (list[i].nodeName === "INPUT") {

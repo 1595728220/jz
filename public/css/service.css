@@ -21,7 +21,7 @@
 #qiehuan{
     text-align:right;
     margin-right:5px;
-    font-size:18px;
+    font-size:12px;
 }
 .nav .right .items ul a{
     margin-right:5px;
@@ -50,16 +50,17 @@
 /* 客服专区入口 */
 .rukou{
     margin:auto;
-    padding:30px 64px;
+    padding:30px 0px;
 }
 .rukou .bg{
     background-image:url("../asets/index-game.jpg");
 }
 .rukou span{
-    width:477px;
-    height:277px;
+    width:550px;
+    height:321px;
     background-repeat:no-repeat;
     background-position-y:-10px;    
+    background-size:1108px;
 }
 .rukou .bg:hover{
     background-image:url("../asets/index-game-hover.jpg");
@@ -71,7 +72,7 @@
 
 .rukou .right{
     display:block;
-    background-position-x:-483px;
+    background-position-x:-560px;
 }
 
 /* 分割线 */
@@ -88,6 +89,7 @@
     box-sizing: border-box;
     border:1px solid #bbb;
     padding:14px 0px;
+    margin-bottom:10px;
 }
 .btnList li{
     display:block;

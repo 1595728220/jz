@@ -13,13 +13,13 @@ function func_login(button,func,checkElement=null) {
         if(checkElement) check_value = check.checked;
         var Reg = /^\w{6,12}$/
         if (!Reg.test(name)) {
-            alert("用户名格式不正确")
+            my_alert("用户名格式不正确")
             uname.value = null
             upwd.value = null
             return
         }
         if (!Reg.test(pwd)) {
-            alert("密码格式不正确")
+            my_alert("密码格式不正确")
             uname.value = null
             upwd.value = null
             return
@@ -27,13 +27,13 @@ function func_login(button,func,checkElement=null) {
         get(`/user/login?uname=${name}&upwd=${pwd}`).then(function (result) {
             if (result.code === 1) {
                 console.log("登录成功")
-                alert(result.msg)
+                my_alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null
                 func(1)
             } else {
                 console.log("登录失败")
-                alert(result.msg)
+                my_alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null
                 func(0)

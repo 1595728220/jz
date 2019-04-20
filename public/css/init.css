@@ -90,3 +90,23 @@ input:-webkit-autofill{
 .ti{
     text-indent:-9999px;
 }
+a:hover{
+    text-decoration:none !important;
+}
+/* 封装的提示模态框样式 */
+#alert_area{
+    /*150px*/
+    height:60px;
+    position: absolute;
+    background:rgba(0,0,0,.6);
+    border-radius:5px;
+    color:#fff;
+    text-align: center;
+    font-size:20px;
+    line-height: 60px;
+    /* display:none; */
+    opacity:0;
+    padding:0 10px;
+    transition:opacity .5s linear 0s,height .5s linear 0s;
+    z-index: 100;
+  }

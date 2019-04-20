@@ -30,7 +30,7 @@ function switchLogin(result) {
         qiehuan.innerHTML = `<span class="cp" id="toLogin">登陆充值中心</span>`
     } else {
         //已登陆
-        qiehuan.innerHTML = `<span>${result.msg},欢迎回来~</span>
+        qiehuan.innerHTML = `<span>亲爱的 ${result.msg},欢迎回来~</span>
         <span class="cp" id="toLogout" onclick="sessionLogout()")">退出登陆</span>
          `
     }

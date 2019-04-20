@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/init.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="js/get.js"></script>    
+    <script src="js/get.js"></script>
+    <script scr="js/alert.js"></script>
     <script src="js/func_login.js"></script>
     <script src="js/login.js"></script>
     <script src="js/header.js"></script>
@@ -19,13 +20,14 @@
     <div id="header" class="clear"></div>
     <div class="bg clear bc">
         <div class="login clear">
+            <div id="alert_area"></div>
             <!-- <div class="left fr" > -->
             <div class="left fr tr" style="width:0;" id="register">
                 <div class="text">
-                    <h2> 注册</h2>    
+                    <h2> 注册</h2>
                     <form class="register clear" id="form" name="loginList">
                         <label class="fl" for="uname">
-                            用户名： 
+                            用户名：
                         </label>
                         <input type="text" class="inputStyle fr inputMargin" name="uname">
                         <label class="fl" for="upwd">
@@ -33,7 +35,7 @@
                         </label>
                         <input type="password" class="inputStyle fr inputMargin" name="upwd">
                         <label class="fl" for="repet">
-                            重复密码：             
+                            重复密码：
                         </label>
                         <input type="password" class="inputStyle fr inputMargin" name="repet">
                         <label class="fl" for="phone">
@@ -43,15 +45,15 @@
                         <label class="fl" for="email">
                             邮箱：
                         </label>
-                            <input type="text" class="inputStyle fr inputMargin" name="email">
+                        <input type="text" class="inputStyle fr inputMargin" name="email">
                         <label class="fl">性别：</label>
-                        <label class="gender fl" >男
-                                <input type="radio" value="1" name="gender" class="radioStyle fl" checked>
-                            </label>
-                        <label  class="gender fl" >女
-                                <input type="radio" value="0" name="gender" class="radioStyle fl">
+                        <label class="gender fl">男
+                            <input type="radio" value="1" name="gender" class="radioStyle fl" checked>
                         </label>
-                        
+                        <label class="gender fl">女
+                            <input type="radio" value="0" name="gender" class="radioStyle fl">
+                        </label>
+
                     </form>
                     <button class="btn" id="btn">完成注册</button>
                 </div>
@@ -72,7 +74,7 @@
                             记住账号
                             <input type="checkbox" class="check pa " id="check">
                         </label>
-                            <p class="goto fr" id="goto">去注册>></p> 
+                        <p class="goto fr" id="goto">去注册>></p>
                         <p class="fr">没有账号？</p>
                     </div>
                     <button class="btn bc" id="btnFinish"></button>
