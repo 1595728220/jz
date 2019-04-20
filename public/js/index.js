@@ -1,4 +1,5 @@
 {
+    let video_list = []
     //调用定义好的方法加载页面中的内容
     window.onload = function () {
         loadNews()
@@ -177,8 +178,10 @@
             var len = res.length
             var gameList = document.getElementById("gameList")
             for (var i = 0; i < len; i++) {
+                let video_name = res[i].videoName
+                video_list[i] = video_name
                 html += `<li class="${res[i].simName} ${res[i].gstate} pr fl">
-                <a>
+                <a href="#">
                     <p class="front pa">
                         <span class="name pa">
                             ${res[i].gname}
@@ -191,8 +194,8 @@
                 </a>
                 <div class="detail tr pr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pa" data-img="close">
-                    <video class="videoSource" data-video="area">
-                        <source src="video/${res[i].videoName}" type="video/mp4">
+                    <video class="videoSource" data-video="area" data-ind="${i}">
+                       <!-- <source src="video/${res[i].videoName}" type="video/mp4"> -->
                     </video>
                     <div class="btns_video pa">
                         <progress class="positionBar pa" data-btn="progress"></progress>
@@ -267,9 +270,14 @@
             }
             //点击弹出视频框
             if (e.target.dataset.p === "back") {
+                console.log(video_list)
                 var div = e.target.parentElement.parentElement.children[1]
+                console.log(div)
+                console.log(div.dataset.ind)
+                console.log(video_list[div.dataset.ind])
                 div.style.width = "1067px"
                 div.style.height = "600px"
+                div.children[1].innerHTML = `<source src="video/${video_list[div.children[1].dataset.ind]}" type="video/mp4"></source>`
             }
             //点击隐藏视频框
             if (e.target.dataset.img === "close") {

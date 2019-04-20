@@ -55,9 +55,9 @@ function login() {
 function successLogin(sign) {
     if (sign) {
         setInterval(()=>{
-            loginForm.style.width = "0"
-            loginForm.style.height = "0"
-            // history.go(0)
+            history.go(0)
+            //loginForm.style.width = "0"
+            //loginForm.style.height = "0"
         },3000)
         
     }

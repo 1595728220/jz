@@ -7,67 +7,6 @@
         submit()
         otherJump()
     }
-    //使用canvas实现文字滚动
-    function draw(square, wall, deltaTime) {
-        if (deltaTime > 40) {
-            deltaTime = 40
-        }
-        //获取画笔对象
-        var ctx = c3.getContext("2d")
-        ctx.clearRect(0, 0, 430, 430)
-        ctx.fillStyle = "rgba(220, 220, 220,.3)"
-        ctx.fillRect(square.x, square.y, 300, 80)
-        var str = "PLEASE LOGIN."
-        ctx.fillStyle = "#000"
-        ctx.font = "30pt sans-serif"
-        ctx.textBaseline = "top"
-        ctx.fillText(str, square.x + 2, square.y + 44)
-        str = "WELCOME."
-        ctx.fillStyle = "#000"
-        ctx.font = "30pt sans-serif"
-        ctx.textBaseline = "top"
-        ctx.fillText(str, square.x + 2, square.y + 2)
-        //如果文字触碰水平方向边界，改变角度
-        if (square.x > wall.maxW || square.x < wall.minW) {
-            square.alpha = Math.PI - square.alpha
-        }
-        //如果文字触碰竖直方向边界，改变角度
-        if (square.y > wall.maxH || square.y < wall.minH) {
-            square.alpha = 2 * Math.PI - square.alpha
-        }
-        //计算下一次的文字位置
-        square.x += square.speed * deltaTime * Math.cos(square.alpha)
-        square.y += square.speed * deltaTime * Math.sin(square.alpha)
-        console.log(square.x, square.y, square.alpha)
-    }
-    //定义左侧框内文字的滚动效果
-    function gundong() {
-        var square = {
-            x: 10,
-            y: 10,
-            speed: .07, //控制方块运动速度
-            alpha: Math.PI / 5 //控制方块运动方向与x轴正方向夹角
-        }
-        var wall = {
-            minH: 10,
-            maxH: 280,
-            minW: 10,
-            maxW: 100
-        }
-        var lastTime = Date.now()
-        var deltaTime = 0
-        textLoop();
-        function textLoop() {
-            console.log("智能动画正在运行...")
-            var now = Date.now()
-            deltaTime = now - lastTime
-            lastTime = now
-            draw(square, wall, deltaTime)
-            requestAnimationFrame(textLoop)
-        }
-    }
-    //以上两个函数未使用
-
     //设置按钮点击登录
     function login() {
         var checkElement = document.getElementById("check")
