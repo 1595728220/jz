@@ -458,3 +458,29 @@ a:hover{
     transition:opacity .5s linear 0s,height .5s linear 0s;
     z-index: 100;
   }
+  /*loding图片的样式*/
+ 
+  .gif_loading{
+    width:100px;
+    height:100px;
+    display:block;
+    /* margin:0 auto; */
+  }
+   .banner .gif_loading{
+    margin-top:166px;
+    margin-left:701px;
+  }
+  .games .gif_loading{
+    margin-top:43px;
+    margin-left:507px;
+  }
+  .news .gif_loading{
+    width:100px;
+    height:100px;
+    margin-top:140px;
+    margin-left:310px;
+  }
+  .videoSource .gif_loading{
+    margin-top:140px;
+    margin-left:310px;
+  }

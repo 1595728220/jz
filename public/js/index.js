@@ -194,7 +194,8 @@
                 </a>
                 <div class="detail tr pr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pa" data-img="close">
-                    <video class="videoSource" data-video="area" data-ind="${i}">
+                    <video class="videoSource clear" data-video="area" data-ind="${i}">
+                         <img src="asets/loading.gif" class="gif_loading"alt="">
                        <!-- <source src="video/${res[i].videoName}" type="video/mp4"> -->
                     </video>
                     <div class="btns_video pa">
