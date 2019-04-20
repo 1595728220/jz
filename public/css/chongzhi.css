@@ -33,7 +33,7 @@
 
 
 .chongzhi{
-    background-image: url("../asets//header-el.png");
+    background-image: url("../asets/header-el.png");
     background-repeat:no-repeat;
     background-position: -10px -84px;
     width:70px;
@@ -65,7 +65,7 @@
 .banner>img{
     width:1200px;
 }
-h2{
+.game h2{
     width:100px;
     text-align:center;
     color:#222;

@@ -159,6 +159,8 @@
     }
     //登陆成功后要执行的方法
     function successLogin(sign) {
-       if(sign) location.href = "/person.html"
+        setTimeout(() => {
+            if(sign) location.href = "/person.html"
+        },3000)
     }
 }

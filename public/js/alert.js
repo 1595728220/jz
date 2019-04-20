@@ -5,6 +5,7 @@
      */
     function my_alert(msg) {
         //将消息添加到提示框
+        console.log(alert_area.parentElement)
         alert_area.innerHTML = msg
         let high = alert_area.parentElement.clientHeight, //获取父元素高度
             wid = alert_area.parentElement.clientWidth, //获取父元素宽度
@@ -25,4 +26,4 @@
         }, 2000)
     }
 }
-console.log("it is my_alert")
+console.log("my_alert on ready")

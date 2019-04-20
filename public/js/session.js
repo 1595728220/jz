@@ -54,16 +54,20 @@ function login() {
 //成功登陆后要执行的方法
 function successLogin(sign) {
     if (sign) {
-        loginForm.style.width = "0"
-        loginForm.style.height = "0"
-        history.go(0)
+        setInterval(()=>{
+            loginForm.style.width = "0"
+            loginForm.style.height = "0"
+            // history.go(0)
+        },3000)
+        
     }
 }
 //展开登陆窗口的方法
 function show_login() {
     //获取展示和关闭按钮的元素
     var loginForm = document.getElementById("loginForm")
-    loginForm.innerHTML = `<img src="./asets/Cancel.png" class="fr tr" id="closeLogin">
+    loginForm.innerHTML = `<div id="alert_area"></div>
+    <img src="./asets/Cancel.png" class="fr tr" id="closeLogin">
     <h2>登陆极致通行证</h2>
     <form>
         <input type="text" class="inputStyle" placeholder="请输入账号" name="uname" id="uname">
@@ -76,8 +80,8 @@ function show_login() {
     </div>`
     var toLogin = document.getElementById("toLogin")
     var closeLogin = document.getElementById("closeLogin")
-    console.log(toLogin)
-    console.log(closeLogin)
+    // console.log(toLogin)
+    // console.log(closeLogin)
     if (toLogin) {
         toLogin.onclick = function (e) {
             e.preventDefault
