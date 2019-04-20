@@ -199,7 +199,7 @@
                         <button data-video="start" class="btn_start pa"></button>
                         <span class="currentTime pa">00:00:00</span>
                         <span class="totalTime pa">00:00:00</span>
-                        <span class="audio_low pa" data-btn="audio"></span>
+                        <span class="audio_high pa" data-btn="audio"></span>
                         <span class="audio_control pa" data-btn="control"></span>
                         <span class="full_screen pa" data-btn="full"></span>
                     </div>
@@ -214,12 +214,16 @@
     function showGame() {
         //描述最左侧元素的下标
         let count = 0,
-        //定时器的标签
-        timer,
-        //视频是否正在播放
-        video_state = false,
+            //定时器的标签
+            timer,
+            //视频是否正在播放
+            video_state = false,
             //音量大小
-            audio_value = 1,
+            audio_value = 2,
+            //当前音量的范围值
+            change_audio_value = 2,
+            //当前视频的实际音量
+            now_audio_value
             //音量条区域的显示状态
             audio_area_state = 0
 
@@ -287,12 +291,15 @@
             if (e.target.dataset.btn === "audio") {
                 if (audio_value == 2) {
                     audio_value = 0
+                    change_audio_value = 0
                     e.target.className = "audio_close pa"
                 } else if (audio_value === 1) {
                     audio_value++
+                    change_audio_value ++
                     e.target.className = "audio_high pa"
                 } else {
                     audio_value++
+                    change_audio_value ++
                     e.target.className = "audio_low pa"
                 }
                 e.target.parentElement.parentElement.children[1].volume = audio_value / 3
@@ -314,18 +321,15 @@
                 video_switch(e)
             }
             //点击全屏
-            if(e.target.dataset.btn === "full") {
+            if (e.target.dataset.btn === "full") {
                 let playVideo = e.target.parentElement.parentElement
-                playVideo.style.left="0";
-                playVideo.style.top = "0";
-                playVideo.style.height = window.screen.availHeight+"px"
-                playVideo.style.width =  window.screen.availWidth+"px"
-                playVideo.children[1].style.width = window.screen.availWidth+"px"
-                playVideo.children[1].style.height = window.screen.availHeight+"px"
-                // playVideo.style.width = document.body.scrollWidth +"px";
-                // playVideo.style.height = document.body.scrollHeight+"px";
-                // playVideo.children[1].style.width = document.body.scrollWidth +"px";
-                // playVideo.children[1].style.height = document.body.scrollHeight+"px";
+                // playVideo.style.left="0";
+                // playVideo.style.top = "0";
+                // playVideo.style.height = window.screen.availHeight+"px"
+                // playVideo.style.width =  window.screen.availWidth+"px"
+                // playVideo.children[1].style.width = window.screen.availWidth+"px"
+                // playVideo.children[1].style.height = window.screen.availHeight+"px"
+                playVideo.children[1].requestFullscreen()
             }
         })
         for (var i = 0, //获得视频的父元素
@@ -366,15 +370,40 @@
                 //设定定时器模拟进度条
                 timer = setInterval(function () {
                     console.log("视频播放中" + video_state)
+                    //当前播放的视频元素
+                    let now_video = e.target.parentElement.parentElement.children[1]
                     //取出当前视频的播放参数
-                    let maxTime = e.target.parentElement.parentElement.children[1].duration
-                    let currentTime = e.target.parentElement.parentElement.children[1].currentTime
+                    let maxTime = now_video.duration
+                    let currentTime = now_video.currentTime
                     //赋值播放参数以进度条的形式表现
                     e.target.parentElement.children[0].max = maxTime
                     e.target.parentElement.children[0].value = currentTime
                     //更改控制条时间显示  
                     e.target.parentElement.children[2].innerHTML = changeTime(currentTime)
                     e.target.parentElement.children[3].innerHTML = changeTime(maxTime)
+                    //根据当前音量切换音量图片
+                    now_audio_value = now_video.volume
+                    console.log(change_audio_value,audio_value,now_audio_value)
+                    if (now_audio_value >= 2 / 3) {
+                        audio_value = 2
+                    } else if (now_audio_value > 0) {             
+                        audio_value = 1
+                    } else {      
+                        audio_value = 0
+                    }
+                    if (change_audio_value !== audio_value) {
+                        console.log(111)
+                        if (audio_value == 0) {
+                            e.target.parentElement.children[4].className = "audio_close pa"
+                            change_audio_value = 0
+                        } else if (audio_value === 2) {
+                            change_audio_value = 2
+                            e.target.parentElement.children[4].className = "audio_high pa"
+                        } else {
+                            change_audio_value = 1
+                            e.target.parentElement.children[4].className = "audio_low pa"
+                        }
+                    }
                     //当视频播放完全，清空定时器
                     if (!(maxTime - currentTime)) {
                         console.log("视频已播放完毕")
@@ -382,10 +411,11 @@
                         e.target.parentElement.children[1].className = "btn_start pa"
                         clearInterval(timer)
                     }
+
                 }, 1000)
             }
         }
-        
+
 
     }
     //转换秒数为时间数

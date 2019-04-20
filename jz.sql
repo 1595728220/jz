@@ -44,13 +44,14 @@ create table games(
     imgId varchar(64),
     origin varchar(8),
     simName varchar(8),
-    gstate varchar(8)
+    gstate varchar(8),
+    videoName varchar(64)
 );
-insert into games values(null,"文明大爆炸","《文明大爆炸》极光独代 今日首发","超有趣的养肝护发休闲手游，一起来开创文明进程吧！","https://jgyx.qq.com/bbc/",3,"手游","bbc","hot");
-insert into games values(null,"魔侠传","《魔侠传》十年经典 专注PK","激情PK网游《魔侠传》火爆公测，带你回归最经典的热血战斗时代！","http://mx.jzyx.com/",2,"端游","mx","new");
-insert into games values(null,"道友请留步","《道友请留步》颠覆修仙 今日公测","极致游戏最火爆的修仙手游《道友请留步》火爆公测进行中！","http://dy.jzyx.com/home/",1,"手游","dy","new");
-insert into games(gname,imgId,origin,simName,gstate) values("决战荣耀",4,"手机页游","jzmy","hot");
-insert into games(gname,imgId,origin,simName,gstate) values("巫神归来",5,"端游","df","new");
+insert into games values(null,"文明大爆炸","《文明大爆炸》极光独代 今日首发","超有趣的养肝护发休闲手游，一起来开创文明进程吧！","https://jgyx.qq.com/bbc/",3,"手游","bbc","hot","song_mv_1.mp4");
+insert into games values(null,"魔侠传","《魔侠传》十年经典 专注PK","激情PK网游《魔侠传》火爆公测，带你回归最经典的热血战斗时代！","http://mx.jzyx.com/",2,"端游","mx","new","song_mv_2.mp4");
+insert into games values(null,"道友请留步","《道友请留步》颠覆修仙 今日公测","极致游戏最火爆的修仙手游《道友请留步》火爆公测进行中！","http://dy.jzyx.com/home/",1,"手游","dy","new","song_mv_3.mp4");
+insert into games(gname,imgId,origin,simName,gstate,videoName) values("决战荣耀",4,"手机页游","jzmy","hot","song_mv_4.mp4");
+insert into games(gname,imgId,origin,simName,gstate,videoName) values("巫神归来",5,"端游","df","new","song_mv_5.mp4");
 create table imgs(
     iid int primary key auto_increment,
     sm_img varchar(128),
