@@ -1,17 +1,23 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-const cors = require("cors")
+const url = require("url")
 const loadRouter = require("./routes/load")
 const userRouter = require("./routes/user")
+let White_list = ["http://47.103.4.25:5500","http://127.0.0.1:5500","http://127.0.0.1"],
+index
 let app = express()
-//app.use(express.static("../public"))
+app.all("*",(req,res,next)=>{
+	let ori = req.headers.origin
+	index = White_list.indexOf(ori)
+	//console.log("在中间件中")
+	if(index === -1) index = 0
+	//console.log(White_list[index])
+	res.header("Access-Control-Allow-Origin", White_list[index])
+	res.header("Access-Control-Allow-Credentials", true)
+	next()
+})
 app.use(cookieParser("12345"))
-app.use(cors({
-   origin: 'http://47.103.4.25:5500',    //控制响应头Access-Control-Allow-Origin
-   credentials: true, //控制响应头Access-Control-Allow-Credentials
-    //这一项是为了跨域专门设置的
-}))
 app.use(session({
     secret:"12345",
     resave:false,

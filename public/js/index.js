@@ -192,7 +192,7 @@
                 <div class="detail tr pr" data-div="detail">
                     <img src="./asets/Cancel.png" class="pa" data-img="close">
                     <video class="videoSource" data-video="area">
-                        <source src="video/song_mv.mp4" type="video/mp4">
+                        <source src="video/${res[i].videoName}" type="video/mp4">
                     </video>
                     <div class="btns_video pa">
                         <progress class="positionBar pa" data-btn="progress"></progress>

@@ -21,7 +21,7 @@ router.get("/banner", (req, res) => {
 })
 //处理游戏展示请求
 router.get("/game", (req, res) => {
-    var sql = "select gname,origin,simName,gstate,md_img,videoName from games,imgs where imgId = iid"
+    var sql = "select gname,origin,simName,gstate,md_img from games,imgs,videoName where imgId = iid"
     pool.query(sql, (err, result) => {
         if (err) throw err
         res.send(result)

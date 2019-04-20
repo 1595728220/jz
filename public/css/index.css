@@ -204,13 +204,13 @@ header a:hover{
 }
 .games .detail img{
     width:35px;
-    top:0px;
-    right:0px;
+    top:5px;
+    right:7px;
     z-index:100;
     background:rgba(50,50,50,.6)
 }
 .games .detail video{
-    height:100%;
+    width:1067px;
     margin:auto;
 }
 .games .detail .btns_video{
