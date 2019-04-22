@@ -1,7 +1,8 @@
 {
-    let video_list = []
+    let video_list = [],
+    img_width
     //调用定义好的方法加载页面中的内容
-    window.onload = function () {
+    window.onload = function () {    
         loadNews()
         loadImgs()
         loadGame()
@@ -28,19 +29,22 @@
             //将第一张图复制到数组末尾
             res[res.length] = res[0]
             //定义要加载的html文本字符串
-            var html = "";
+            let html = ""
+            //获取此时网页的宽度
+            img_width = document.body.scrollWidth
+            console.log("第一次获取网页宽度"+img_width)
             //定义修改后的的数组长度
-            var length = res.length;
+            length = res.length        
             //for循环遍历数据数组并拼接到相应的html标签中
-            for (var i of res) {
+            for (let i of res) {
                 html += `<a href="${i.addr}" style="">
-                <img src="${i.img}" alt="" class="fixWidth">
+                    <img src="${i.img}" alt="" style="width:${img_width}px">
                 </a>`
             }
             //挂载到dom树上
             imgs.innerHTML = html;
             //设置外层用于包裹图片的父元素的宽度
-            imgs.style.width = 1500 * length + "px";
+            imgs.style.width = img_width * length + "px";
             //将修改后的数据数组的长度赋值给自定义扩展属性length
             imgs.dataset.length = length;
             resolve()
@@ -52,26 +56,29 @@
         console.log("正在轮播中")
         //设置父元素相对定位
         imgs.className = "pr"
+        //获取此时网页的宽度
+        img_width = document.body.scrollWidth
+        console.log("第二次获取网页宽度"+img_width)
         //记录智能动画未开始的时间节点
-        var lastTime = new Date()
+        let lastTime = new Date(),
         //定义智能动画执行的间隔
-        var deltaTime = 0
+        deltaTime = 0,
         //通过自定义扩展属性length获取数据数组的长度
-        var length = imgs.dataset.length
+         length = imgs.dataset.length,
         //定义播放的速度
-        var speed = 3
+         speed = 3,
         //定义智能动画的唯一标识
-        var timer
+        timer,
         //定义绝对定位的left属性值
-        var left = 0
+         left = 0,
         //定义当前图片的下标
-        var n = 0
+         n = 0,
         //定义每张图片的累积边界值
-        var juli = 1500
+         juli = img_width,
         //定义何时该等待执行智能动画，0表示等待，1表示直接执行
-        var sign = 0
+         sign = 0,
         //定义父元素的宽度
-        var totalWidth = parseInt(imgs.style.width)
+         totalWidth = parseInt(imgs.style.width)
         //调用智能动画的封装后的方法
         smartLoop()
         //调用click为小圆点添加事件监听
@@ -79,7 +86,7 @@
         //该方法封装了智能动画
         function smartLoop() {
             //定义开始执行时的时间节点
-            var now = new Date()
+            let now = new Date()
             //计算中间的时间间隔
             deltaTime = now - lastTime
             if (sign === 1) {
@@ -98,7 +105,7 @@
         function lunbo() {
             //如果累计的边界不小于父元素的宽度，那么重置参数
             if (juli >= totalWidth) {
-                juli = 1500
+                juli = img_width
                 left = 0
                 n = 0
             }
@@ -113,7 +120,7 @@
                 sign = 0
                 n++
                 left = -juli
-                juli = 1500 * (n + 1)
+                juli = img_width * (n + 1)
             }
             //调用setClass方法对下标除n外的元素清除样式类，并为下标为n的元素添加current样式,特殊的n=7时返回0
             setClass(n < length - 1 ? n : 0)
@@ -123,9 +130,9 @@
         //实现点击小圆点切换图片
         function click() {
             //获取小圆点的父元素
-            var div = document.getElementsByClassName("round")[0]
+            let div = document.getElementsByClassName("round")[0],
             // 获取小圆点的元素的数组
-            var length = div.children.length
+             length = div.children.length
             //利用冒泡为小圆点添加点击事件
             div.addEventListener("mouseover", e => {
                 console.log("鼠标移入")
@@ -140,8 +147,8 @@
                     //控制等待3s后进行轮播
                     sign = 0
                     //改变参数与点击的元素下标相适应
-                    left = -1500 * n
-                    juli = 1500 * (n + 1)
+                    left = -img_width * n
+                    juli = img_width * (n + 1)
                     //调用setClass方法对下标除n外的元素清除样式类，并为下标为n的元素添加current样式,特殊的n=7时返回0
                     setClass(n < length ? n : 0)
                     //将修改后的属性赋给父元素
@@ -153,8 +160,8 @@
         }
 
         function setClass(index) {
-            var iList = document.getElementById("round").children
-            for (var i = 0; i < iList.length; i++) {
+            let iList = document.getElementById("round").children
+            for (let i = 0; i < iList.length; i++) {
                 if (i !== index) {
                     iList[i].className = ""
                 } else {
@@ -174,10 +181,10 @@
     //定义函数实现将游戏数据显示到视图，返回promise对象
     function game(res) {
         return new Promise(function (resolve, reject) {
-            var html = ""
-            var len = res.length
-            var gameList = document.getElementById("gameList")
-            for (var i = 0; i < len; i++) {
+            let html = "",
+             len = res.length,
+             gameList = document.getElementById("gameList")
+            for (let i = 0; i < len; i++) {
                 let video_name = res[i].videoName
                 video_list[i] = video_name
                 html += `<li class="${res[i].simName} ${res[i].gstate} pr fl">
@@ -272,7 +279,7 @@
             //点击弹出视频框
             if (e.target.dataset.p === "back") {
                 console.log(video_list)
-                var div = e.target.parentElement.parentElement.children[1]
+                let div = e.target.parentElement.parentElement.children[1]
                 console.log(div)
                 console.log(div.dataset.ind)
                 console.log(video_list[div.dataset.ind])
@@ -341,7 +348,7 @@
                 playVideo.children[1].requestFullscreen()
             }
         })
-        for (var i = 0, //获得视频的父元素
+        for (let i = 0, //获得视频的父元素
                 video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
@@ -459,10 +466,10 @@
     //加载新闻的方法
     function news(res) {
         return new Promise(function (resolve, reject) {
-            var html = "<h2>+游戏资讯</h2>"
-            var length = res.length
-            var news = document.getElementById("news")
-            for (var i of res) {
+            let html = "<h2>+游戏资讯</h2>",
+             length = res.length,
+            news = document.getElementById("news")
+            for (let i of res) {
                 html += `<div class="pr">
             <p class="pic fl pr">
                 <a href="${i.addr}" target="_blank"><img src="asets/${i.sm_img}"></a>
@@ -488,15 +495,15 @@
     }
     //定义新闻图片鼠标悬停的边框效果
     function border() {
-        var news = document.getElementById("news")
+        let news = document.getElementById("news")
         news.addEventListener("mouseover", function (e) {
             e.preventDefault
             if (e.target.nodeName === "IMG") {
-                var list = e.target.parentElement.parentElement.children
-                var one = list[1]
-                var two = list[2]
-                var three = list[3]
-                var four = list[4]
+                let list = e.target.parentElement.parentElement.children,
+                 one = list[1],
+                 two = list[2],
+                 three = list[3],
+                 four = list[4]
                 one.style.width = "231px"
                 four.style.height = "120px"
                 three.style.width = "231px"
@@ -506,11 +513,11 @@
         news.addEventListener("mouseout", function (e) {
             e.preventDefault
             if (e.target.nodeName === "IMG") {
-                var list = e.target.parentElement.parentElement.children
-                var one = list[1]
-                var two = list[2]
-                var three = list[3]
-                var four = list[4]
+                let list = e.target.parentElement.parentElement.children,
+                 one = list[1],
+                 two = list[2],
+                 three = list[3],
+                 four = list[4]
                 one.style.width = "0px"
                 four.style.height = "0px"
                 three.style.width = "0px"
@@ -520,7 +527,7 @@
     }
     //添加电话摇晃效果
     function shock() {
-        var eventArea = document.getElementById("eventArea")
+        let eventArea = document.getElementById("eventArea")
         eventArea.onmouseenter = e => {
             e.preventDefault
             e.target.nextElementSibling.style.animation = "turn 1.5s linear infinite"

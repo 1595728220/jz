@@ -11,7 +11,7 @@ li.fontGreen,a.fontGreen,span.fontGreen{
 }
 .container{
     overflow: hidden;
-    width:1500px;
+    /* width:1500px; */
     border-width:1px 0;
     border-style:solid;
     border-color:#dcdee0;
@@ -71,7 +71,7 @@ header a:hover{
 .banner p{
     height:492px;
     /* width:1900px; */
-    margin-left: -200px;
+    margin-left: -315px;
     /* overflow: hidden; */
     /* left:1px; */
     /* transition:margin-left .5s linear .1s; */
@@ -107,7 +107,7 @@ header a:hover{
 /* 游戏展示列表的样式 */
 .games{
     height:280px;
-    background-color: #e3e6e9;
+    background-color: #fff;
 }
 .games .box{
     position: relative;

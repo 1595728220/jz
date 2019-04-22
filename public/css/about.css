@@ -25,6 +25,8 @@ body{
   display:inline-block;
   position:relative;
   opacity:0.7;
+  margin-left:10px;
+  margin-right:10px;
 }
 .front{
   width:220px;
@@ -51,4 +53,58 @@ body{
   backface-visibility: hidden;
   transition:transform .3s linear;
   border-radius:5px;
+}
+.card .front img{
+  width:120px;
+  border-radius:50%;
+  border-radius:5px solid #ffc500;
+  display:inline-block;
+  margin-bottom:10px;
+}
+.card .front .title{
+  width:100%;
+  font-size:18px;
+  color:#ffc500;
+  display:inline-block;
+}
+.card .front hr{
+  height:0;
+  border:1px solid;
+  color:#ffc500;
+}
+.card .front .detail{
+  font-size:16px;
+}
+.card .front .card_content{
+  font-size:14px;
+}
+.card .back .title{
+  display:inline-block;
+  width:100%;
+  background:#ffc500;
+  font-size:18px;
+  text-align:center;
+  color:#000;
+  border-radius:5px;
+}
+.card .back .content{
+  width:100%;
+  font-size:16px;  
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.card .back a{
+  width:100%;
+  display:inline-block;
+  color:#fff;
+  background:#7f7777;
+  text-align:center;
+  border-radius:3px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.card .back .weixin{
+  display:block;
+  width:180px;
+  margin:15px auto;
 }
