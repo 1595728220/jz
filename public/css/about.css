@@ -61,7 +61,7 @@ header .header_list a{
   height:100%;
   position: absolute;
   backface-visibility: hidden;
-  transition:transform .3s linear;
+  transition:transform 50ms linear;
   border-radius:5px;
 }
 .card .front img{

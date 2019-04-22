@@ -32,7 +32,7 @@
     for(let i = 0,cards = card_area.children,len = cards.length; i < len; i++ ) {
       //移入正面卡片
       cards[i].children[0].onmouseenter  = e => {
-        console.log("鼠标移入")
+        console.log("鼠标移入正面")
         e.preventDefault
         //正面卡片和反面卡片翻转
         e.target.style.transform = "rotateY(180deg)"
@@ -41,7 +41,7 @@
       //移出反面卡片
       cards[i].children[1].onmouseleave = e => {
         e.preventDefault
-        console.log("鼠标移出")
+        console.log("鼠标移出反面")
         //正面卡片和反面卡片翻转,延时0.5s
         setTimeout(()=>{
           e.target.style.transform = "rotateY(180deg)"
