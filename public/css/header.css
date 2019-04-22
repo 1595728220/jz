@@ -19,9 +19,9 @@
     width:168px;
     left:73px;
     top:41px;
-    border-top:.5px solid #333;
+    /* border-top:.5px solid #333; */
     height:0px;
-    border-bottom:.5px solid #333;
+    /* border-bottom:.5px solid #333; */
     /* transition:height .5s linear 0s; */
 }
 .header>ul{

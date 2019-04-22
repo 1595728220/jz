@@ -398,7 +398,7 @@ input:-webkit-autofill{
     box-shadow:0 0 0px 1000px #fff inset;
 }
 #header{
-    /* width:1200px; */
+    width:100%;
     display: block;
     margin:auto;
     height:41px;

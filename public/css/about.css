@@ -1,0 +1,54 @@
+body{
+  background:#000;
+  color:#fff;
+}
+#header a{
+  color:#fff;
+}
+#header{
+  border-bottom:1px solid #fff;
+}
+.contain{
+  width:100%;
+  /* height:1000px; */
+  background:#000;
+}
+#card_area{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  flex-flow:row nowrap;
+}
+.card{
+  width:220px;
+  height:280px;
+  display:inline-block;
+  position:relative;
+  opacity:0.7;
+}
+.front{
+  width:220px;
+  height:280px;
+  box-sizing: border-box;
+  transform:rotateY(0deg);
+  background:linear-gradient(to bottom right,#232526,#414345);
+  text-align:center;
+  padding:30px;
+}
+.back{
+  width:220px;
+  height:280px;
+  box-sizing: border-box;
+  background:linear-gradient(to bottom right,#232526,#414345);
+  transform:rotateY(180deg);
+  padding:40px 15px;
+  color:#fff;
+}
+.front,.back{
+  width:100%;
+  height:100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition:transform .3s linear;
+  border-radius:5px;
+}
