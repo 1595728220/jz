@@ -1,6 +1,6 @@
 {
     let video_list = [],
-    img_width
+    img_width = 1500
     //调用定义好的方法加载页面中的内容
     window.onload = function () {    
         loadNews()
@@ -31,8 +31,8 @@
             //定义要加载的html文本字符串
             let html = ""
             //获取此时网页的宽度
-            img_width = document.body.scrollWidth
-            console.log("第一次获取网页宽度"+img_width)
+            // img_width = document.body.scrollWidth
+            // console.log("第一次获取网页宽度"+img_width)
             //定义修改后的的数组长度
             length = res.length        
             //for循环遍历数据数组并拼接到相应的html标签中
@@ -57,8 +57,8 @@
         //设置父元素相对定位
         imgs.className = "pr"
         //获取此时网页的宽度
-        img_width = document.body.scrollWidth
-        console.log("第二次获取网页宽度"+img_width)
+        // img_width = document.body.scrollWidth
+        // console.log("第二次获取网页宽度"+img_width)
         //记录智能动画未开始的时间节点
         let lastTime = new Date(),
         //定义智能动画执行的间隔

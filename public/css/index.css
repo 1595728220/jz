@@ -11,7 +11,7 @@ li.fontGreen,a.fontGreen,span.fontGreen{
 }
 .container{
     overflow: hidden;
-    /* width:1500px; */
+    width:1500px;
     border-width:1px 0;
     border-style:solid;
     border-color:#dcdee0;
@@ -71,7 +71,7 @@ header a:hover{
 .banner p{
     height:492px;
     /* width:1900px; */
-    margin-left: -315px;
+    margin-left: -200px;
     /* overflow: hidden; */
     /* left:1px; */
     /* transition:margin-left .5s linear .1s; */
