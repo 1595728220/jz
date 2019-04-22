@@ -37,7 +37,7 @@
             length = res.length        
             //for循环遍历数据数组并拼接到相应的html标签中
             for (let i of res) {
-                html += `<a href="${i.addr}" style="">
+                html += `<a href="${i.addr}" style="" target="_blank">
                     <img src="${i.img}" alt="" style="width:${img_width}px">
                 </a>`
             }
