@@ -15,13 +15,13 @@
         get("/load/banner")
             //在then方法中写入带参的回调函数，并返回一个promise对象
             .then(function (data) {
-                console.log(`get请求数据成功，调用回调函数传入参数data:${data},返回一个promise对象：${banner}`)
+                console.log(`get请求数据成功，调用回调函数传入参数data,返回一个promise对象`)
                 // console.log(data)
                 return banner(data)
             })
             //在then方法中写入不带参的回调函数，返回一个方法
             .then(function () {
-                console.log(`get请求数据成功，调用回调函数,返回一个方法：${newBanner}`)
+                console.log(`get请求数据成功，调用回调函数,返回一个方法`)
                 return newBanner()
             })
     }
