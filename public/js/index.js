@@ -351,7 +351,8 @@
             }
         })
         for (let i = 0, //获得视频的父元素
-                video_father = document.getElementsByClassName("detail tr pr"), len = video_father.length; i < len; i++) {
+                video_father = document.getElementsByClassName("detail"), len = video_father.length; i < len; i++) {
+            console.log(video_father)
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
                 e.preventDefault
