@@ -1,7 +1,7 @@
 {
     //调用get函数获取头部文件代码
     get("/header.html", "text").then(function (html) {
-        console.log(`已获取到文件信息调用回调函数，传入参数html:${html.substr(0,20)}...`)
+        // console.log(`已获取到文件信息调用回调函数，传入参数html:${html.substr(0,20)}...`)
         //将头部文件代码并加载到id为div的标签中
         header.innerHTML = html
         //为列表项添加鼠标移入移出的效果

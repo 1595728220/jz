@@ -26,4 +26,4 @@
         }, 2000)
     }
 }
-console.log("my_alert on ready")
+// console.log("my_alert on ready")

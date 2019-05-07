@@ -9,7 +9,7 @@ function checkSession(){
         if(result.code === "-1"){
             location.href = "/login.html"
         }else{
-            console.log("用户已登陆")
+            // console.log("用户已登陆")
         }
     }
 }

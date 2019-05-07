@@ -26,13 +26,13 @@ function func_login(button,func,checkElement=null) {
         }
         get(`/user/login?uname=${name}&upwd=${pwd}`).then(function (result) {
             if (result.code === 1) {
-                console.log("登录成功")
+                // console.log("登录成功")
                 my_alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null
                 func(1)
             } else {
-                console.log("登录失败")
+                // console.log("登录失败")
                 my_alert(result.msg)
                 checkF(name,check_value)
                 upwd.value = null

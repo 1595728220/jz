@@ -15,13 +15,13 @@
         get("/load/banner")
             //在then方法中写入带参的回调函数，并返回一个promise对象
             .then(function (data) {
-                console.log(`get请求数据成功，调用回调函数传入参数data,返回一个promise对象`)
+                // console.log(`get请求数据成功，调用回调函数传入参数data,返回一个promise对象`)
                 // console.log(data)
                 return banner(data)
             })
             //在then方法中写入不带参的回调函数，返回一个方法
             .then(function () {
-                console.log(`get请求数据成功，调用回调函数,返回一个方法`)
+                // console.log(`get请求数据成功，调用回调函数,返回一个方法`)
                 return newBanner()
             })
     }
@@ -55,7 +55,7 @@
 
     //智能动画实现轮播
     function newBanner() {
-        console.log("正在轮播中")
+        // console.log("正在轮播中")
         //设置父元素相对定位
         imgs.className = "pr"
         //获取此时网页的宽度
@@ -137,7 +137,7 @@
              length = div.children.length
             //利用冒泡为小圆点添加点击事件
             div.addEventListener("mouseover", e => {
-                console.log("鼠标移入")
+                // console.log("鼠标移入")
                 //获取标签名为i的元素
                 if (e.target.nodeName === "I") {
                     //如果定时器在运行，停止定时器
@@ -280,18 +280,18 @@
             }
             //点击弹出视频框
             if (e.target.dataset.p === "back") {
-                console.log(video_list)
+                // console.log(video_list)
                 let div = e.target.parentElement.parentElement.children[1]
-                console.log(div)
-                console.log(div.dataset.ind)
-                console.log(video_list[div.dataset.ind])
+                // console.log(div)
+                // console.log(div.dataset.ind)
+                // console.log(video_list[div.dataset.ind])
                 div.style.width = "1067px"
                 div.style.height = "600px"
                 div.children[1].innerHTML = `<source src="video/${video_list[div.children[1].dataset.ind]}" type="video/mp4"></source>`
             }
             //点击隐藏视频框
             if (e.target.dataset.img === "close") {
-                console.log("关闭按钮被点击")
+                // console.log("关闭按钮被点击")
                 e.target.parentElement.style.width = "0px"
                 e.target.parentElement.style.height = "0px"
                 //关闭视频框时暂停播放
@@ -302,7 +302,7 @@
             }
             //点击播放/暂停视频
             if (e.target.dataset.video === "start") {
-                console.log("视频播放按钮被点击")
+                // console.log("视频播放按钮被点击")
                 video_switch(e)
             }
             //点击静音
@@ -325,8 +325,8 @@
             }
             //点击进度条调整视频当前播放时间
             if (e.target.dataset.btn === "progress") {
-                console.log(e.offsetX)
-                console.log(e.target.offsetWidth)
+                // console.log(e.offsetX)
+                // console.log(e.target.offsetWidth)
                 //获取当前视频元素
                 let video = e.target.parentElement.parentElement.children[1]
                 //获取视频总时间
@@ -352,17 +352,17 @@
         })
         for (let i = 0, //获得视频的父元素
                 video_father = document.getElementsByClassName("detail"), len = video_father.length; i < len; i++) {
-            console.log(video_father)
+            // console.log(video_father)
             // 为视频的父元素绑定事件监听
             video_father[i].addEventListener("mouseenter", e => {
                 e.preventDefault
-                console.log("鼠标移入视频框")
+                // console.log("鼠标移入视频框")
                 e.target.children[2]
                     .style.display = "block"
             })
             video_father[i].addEventListener("mouseleave", e => {
                 e.preventDefault
-                console.log("鼠标移出视频框")
+                // console.log("鼠标移出视频框")
                 e.target.children[2]
                     .style.display = "none"
             })
@@ -372,7 +372,7 @@
             if (video_state) {
                 //更新此时的视频播放状态
                 video_state = false
-                console.log("视频停止" + video_state)
+                // console.log("视频停止" + video_state)
                 //暂停视频
                 e.target.parentElement.parentElement.children[1].pause()
                 //隐藏或显示按钮
@@ -388,7 +388,7 @@
                 e.target.parentElement.children[1].className = "btn_pause pa"
                 //设定定时器模拟进度条
                 timer = setInterval(function () {
-                    console.log("视频播放中" + video_state)
+                    // console.log("视频播放中" + video_state)
                     //当前播放的视频元素
                     let now_video = e.target.parentElement.parentElement.children[1]
                     //取出当前视频的播放参数
@@ -402,7 +402,7 @@
                     e.target.parentElement.children[3].innerHTML = changeTime(maxTime)
                     //根据当前音量切换音量图片
                     now_audio_value = now_video.volume
-                    console.log(change_audio_value,audio_value,now_audio_value)
+                    // console.log(change_audio_value,audio_value,now_audio_value)
                     if (now_audio_value >= 2 / 3) {
                         audio_value = 2
                     } else if (now_audio_value > 0) {             
@@ -411,7 +411,7 @@
                         audio_value = 0
                     }
                     if (change_audio_value !== audio_value) {
-                        console.log(111)
+                        // console.log(111)
                         if (audio_value == 0) {
                             e.target.parentElement.children[4].className = "audio_close pa"
                             change_audio_value = 0
@@ -425,7 +425,7 @@
                     }
                     //当视频播放完全，清空定时器
                     if (!(maxTime - currentTime)) {
-                        console.log("视频已播放完毕")
+                        // console.log("视频已播放完毕")
                         video_state = false
                         e.target.parentElement.children[1].className = "btn_start pa"
                         clearInterval(timer)

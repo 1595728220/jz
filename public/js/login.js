@@ -1,5 +1,5 @@
 {
-    console.log("js文件加载完成")
+    // console.log("js文件加载完成")
     //调用定义好的方法
     window.onload = function () {
         login()

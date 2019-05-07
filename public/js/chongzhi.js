@@ -1,5 +1,5 @@
 {
-    console.log("chongzhi.js文件已加载")
+    // console.log("chongzhi.js文件已加载")
     //定义一个方法为导航条添加高亮显示效果
     let heightLight = function () {
         //获取导航条元素
