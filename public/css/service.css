@@ -6,12 +6,14 @@
 /* 导航条样式 */
 .nav{
     height:76px;
-    border-bottom:3px solid #2A87D7;
+    background:#2A87D7;
+    /* border-bottom:3px solid #2A87D7; */
 }
 .navbg{
     background-image:url(../asets/header.png);
     background-repeat:repeat-x;
     display:block; 
+    color:#fff;
 }
 .nav .title{
     margin-top:29px;
@@ -19,7 +21,7 @@
     width:200px;
 }
 
-.nav .right .items ul a{
+/* .nav .right .items ul a{
     margin-right:5px;
     height:30px;
     width:86px;
@@ -27,8 +29,8 @@
     border-bottom:0;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-}
-.nav .items{
+} */
+/* .nav .items{
     margin-top:-23px;
 }
 .nav .service{
@@ -42,7 +44,7 @@
 .nav .zhanghao{
     background-position-x:-107px;
     background-position-y:-33px;
-}
+} */
 /* 客服专区入口 */
 .rukou{
     margin:auto;
