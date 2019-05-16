@@ -1,7 +1,49 @@
 
+/* 网页头部样式 */
+#header{
+    box-shadow: 0 0 15px #333;
+}
+header>img {
+    border: 0;
+    padding-top:12px;
+}
+header ul>li{
+    float:left;
+    padding:0;
+    margin:0;
+    text-align:center;
+}
+header ul{
+    float:right;
+    margin-right:24px;
+    margin-top:30px;
+}
+
+header a{
+    
+    color:#555;
+    font-size:18px;
+    line-height:1.1;
+    border-right:1px solid #999;
+    width:126px;
+    display:block;
+}
+header a.last{
+    border-right:0;
+}
+header a.first{
+    width:90px;
+}
+header a.active {
+    color:#4ab71a
+}
+header a:hover{
+    color:#4ab71a
+}
+/* 
 .header{
     width:100%;
-    /* margin:10px auto 10px; */
+
 }
 .header>#erwei{
     background:url("../asets/ad.png") no-repeat -26px 0px;
@@ -19,13 +61,12 @@
     width:168px;
     left:73px;
     top:41px;
-    /* border-top:.5px solid #333; */
+
     height:0px;
-    /* border-bottom:.5px solid #333; */
-    /* transition:height .5s linear 0s; */
+
 }
 .header>ul{
-    /* margin-top:14px; */
+  
     height:41px;
 }
 .header>ul>li{
@@ -46,7 +87,7 @@
 #mulu>ul{
     color:#333;
     background:#aaa;
-    /* transition:height .3s linear 0s; */
+  
     width:100px;
     overflow: hidden;
 }
@@ -61,4 +102,4 @@
 #mulu>.hidden{
     height:0;
     z-index:10
-}
+} */
