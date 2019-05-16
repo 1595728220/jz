@@ -408,8 +408,9 @@ input:-webkit-autofill{
 #qiehuan{
   text-align:right;
   margin-right:5px;
-  font-size:16px;
+  font-size:20px;
   color:#333;
+  font-weight: 500;
 }
 .triangle-top{
     width:0;
@@ -489,4 +490,7 @@ a:hover{
   .videoSource .gif_loading{
     margin-top:140px;
     margin-left:310px;
+  }
+  span:hover{
+    text-decoration: none;
   }

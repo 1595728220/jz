@@ -158,6 +158,71 @@ a:hover{
   top:0;
   background-position:0px -83px;
 }
+.left .my_form{
+  padding-top:50px;
+  /* margin-left:150px; */
+  padding-left:170px;
+}
+.left .my_form .cell_form{
+  height:42px;
+  margin:10px 0 20px;
+  line-height:42px;
+}
+.left .my_form .cell_form input{
+  width: 208px;
+  height: 25px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 25px;
+  border: 1px solid #c2c2c2;
+  background-color: #fff;
+}
+.left .my_form div:nth-child(2){
+  margin-bottom:0px;
+}
+.left .my_form div:nth-child(3){
+  margin-left:90px;
+  font-size:14px;
+}
+.left .my_form .cell_form:nth-child(4){
+  margin-left:-36px;
+}
+.left .my_form button{
+  display: block;
+  width: 220px;
+  height: 34px;
+  border-width: 0;
+  background-color: #ffa601;
+  font-size: 16px;
+  line-height: 34px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  margin-left:90px;
+  cursor: pointer;
+}
+.left .my_red{
+  color:#f00;
+}
+.warm-tip {
+  width: 714px;
+  margin-top: 50px;
+  border-top: 1px dashed #dbdbdb;
+}
+.warm-tip h3 {
+  padding: 20px 0;
+  font-size: 18px;
+  color: #0f0f0f;
+}
+.warm-tip ul {
+  line-height: 20px;
+}
+.warm-tip li {
+  font-size: 14px;
+  color: #8f8f8f;
+}
 /* 右侧样式 */
 .right{
   width:218px;

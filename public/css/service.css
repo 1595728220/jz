@@ -5,18 +5,24 @@
 }
 /* 导航条样式 */
 .nav{
-    height:76px;
+    height:69px;
     background:#2A87D7;
     /* border-bottom:3px solid #2A87D7; */
 }
 .navbg{
-    background-image:url(../asets/header.png);
-    background-repeat:repeat-x;
+    /* background-image:url(../asets/header.png); */
+    /* background-repeat:repeat-x; */
     display:block; 
     color:#fff;
+    font-size:32px;
+}
+.nav_contain{
+    width:1200px;
+    height:69px;
+    margin:auto;
 }
 .nav .title{
-    margin-top:29px;
+    margin-top:0px;
     height:31px;
     width:200px;
 }
