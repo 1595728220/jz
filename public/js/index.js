@@ -280,6 +280,12 @@
             }
             //点击弹出视频框
             if (e.target.dataset.p === "back") {
+                let video = document.querySelectorAll("[data-div=detail]")
+                for(let i = 0,len = video.length; i< len; i++) {
+                    video[i].style.width = "0px"
+                    video[i].style.height = "0px"
+                    video[i].children[1].pause()
+                }
                 // console.log(video_list)
                 let div = e.target.parentElement.parentElement.children[1]
                 // console.log(div)
