@@ -205,6 +205,77 @@ color: #1ecc4d;
 .left .email_box{
   margin-top:70px;
 }
+.left .box_prompt {
+  padding-top: 100px;
+}
+.left .box_prompt .id_bind {
+  width:749px;
+  min-height: 89px;
+  margin-bottom: 17px;
+  padding-left: 125px;
+  font-size: 16px;
+  color: #8f8f8f;
+  background-position: 0 -554px;
+}
+.left .box_prompt .id_bind b {
+  color: #000;
+}
+.left .form-list .field {
+  margin: 10px 0 20px;
+  position: relative;
+}
+.left .form-list .fh {
+  display: inline-block;
+  width: 200px;
+  height: 35px;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: right;
+  *vertical-align: middle;
+}
+.left .form-list .textbox {
+  width: 208px;
+  height: 25px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 25px;
+  border: 1px solid #c2c2c2;
+  background-color: #fff;
+  vertical-align: middle;
+}
+.left .form-list {
+  padding-top: 90px;
+}
+.left .form-list .field a,.left .form-list .field-btn a {
+  margin-left: 15px;
+  font-size: 14px;
+  color: #1fb658;
+}
+.left  .form-list .btn_personal_info {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 205px;
+  width: 220px;
+  height: 34px;
+  border-width: 0;
+  background-color: #ffa601;
+  font-size: 16px;
+  line-height: 34px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+}
+.left .form-list .reset{
+  display: inline-block;
+  margin-top: -5px;
+  margin-top: -10px;
+  vertical-align: middle;
+  margin-left: 15px;
+  font-size: 14px;
+  color: #1fb658;
+}
 /*旗下游戏*/
 .left .usGame {
   margin-top:30px;
