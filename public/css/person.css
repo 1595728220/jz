@@ -129,6 +129,82 @@ a:hover{
   text-decoration:none;
   opacity: 0.8;
 }
+.left .unbind{
+  display: inline-block;
+width: 219px;
+height: 141px;
+margin-right: 22px;
+padding-left: 127px;
+background-color: #fff2de;
+font-size: 20px;
+line-height: 141px;
+color: #1ecc4d;
+}
+.left .pic{
+  background: url(../asets/person/pic_common.png) no-repeat 0 0;
+  display: inline-block;
+  width: 84px;
+  height: 89px;
+  top: 31px;
+}
+.left .sjjb span{
+  background-position: 0 -1317px;
+  left: 33px;
+}
+.left .zhss span{
+  background-position: -168px -1317px;
+  left: 400px;
+
+}
+.left .bind_item {
+  margin-top: 86px;
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.left .bind_item span {
+  margin-left: 10px;
+  color: #1fb658;
+}
+.left .modifyWay {
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.left .result_unbind {
+  width: 330px;
+  min-height: 88px;
+  padding-top: 15px;
+  padding-left: 125px;
+  font-size: 16px;
+  color: #8f8f8f;
+  line-height: 25px;
+}
+.left .unbind_mail {
+  background-position: 0 -1528px;
+}
+.left .result_unbind b {
+  color: #000;
+}
+
+.btn_status_unbind {
+  display: block;
+  width: 130px;
+  height: 34px;
+  margin-top: 25px;
+  margin-left: 90px;
+  background: #ffa601;
+  font-size: 16px;
+  line-height: 34px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-width: 0;
+  border-radius: 5px;
+}
+.left .email_box{
+  margin-top:70px;
+}
 /*旗下游戏*/
 .left .usGame {
   margin-top:30px;
